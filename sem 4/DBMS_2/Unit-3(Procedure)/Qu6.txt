@@ -1,0 +1,71 @@
+create table ProductB193(
+pid int,
+pname varchar(100),
+pprice double precision
+);
+begin
+insert into ProductB193 (pid,pname,pprice) values (1,'Soap',250);
+insert into ProductB193 (pid,pname,pprice) values (2,'Face Wash',300);
+insert into ProductB193 (pid,pname,pprice) values (3,'Face moisturiser',200);
+insert into ProductB193 (pid,pname,pprice) values (4,'Shampoo',400);
+insert into ProductB193 (pid,pname,pprice) values (5,'Toner',400);
+end;
+/
+
+create or replace Procedure delete_record
+is
+p_id ProductB193.pid%TYPE;
+p_name ProductB193.pname%TYPE;
+p_price ProductB193.pprice%TYPE;
+begin
+select pid,pname,pprice into p_id,p_name,p_price from ProductB193 where pprice=200;
+dbms_output.put_line('Employee id is : '||p_id);
+dbms_output.put_line('Employee Name is : '||p_name);
+dbms_output.put_line('Employee salary is : '||p_price);
+
+delete from ProductB193 where pprice=200;
+end;
+/
+
+exec delete_record;
+
+--if you want delete data don't display then you can do this code
+
+create table ProductB193(
+pid int,
+pname varchar(100),
+pprice double precision
+);
+begin
+insert into ProductB193 (pid,pname,pprice) values (1,'Soap',250);
+insert into ProductB193 (pid,pname,pprice) values (2,'Face Wash',300);
+insert into ProductB193 (pid,pname,pprice) values (3,'Face moisturiser',200);
+insert into ProductB193 (pid,pname,pprice) values (4,'Shampoo',400);
+insert into ProductB193 (pid,pname,pprice) values (5,'Toner',400);
+end;
+/
+
+create or replace Procedure delete_record
+is
+p_id ProductB193.pid%TYPE;
+p_name ProductB193.pname%TYPE;
+p_price ProductB193.pprice%TYPE;
+begin
+select pid,pname,pprice into p_id,p_name,p_price from ProductB193 where pprice=200;
+dbms_output.put_line('Employee id is : '||p_id);
+dbms_output.put_line('Employee Name is : '||p_name);
+dbms_output.put_line('Employee salary is : '||p_price);
+
+delete from ProductB193 where pprice=200;
+
+for i in (select pid,pname,pprice from ProductB193)
+loop
+dbms_output.put_line('Pid : '||i.pid);
+dbms_output.put_line('Pname : '||i.pname);
+dbms_output.put_line('Pprice : '||i.pprice);
+dbms_output.put_line('--------------------------------');
+end loop;
+end;
+/
+
+exec delete_record;

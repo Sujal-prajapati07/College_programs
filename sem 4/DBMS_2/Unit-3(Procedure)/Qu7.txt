@@ -1,0 +1,33 @@
+create or replace procedure arithmetic_operation(
+num1 number,
+num2 number,
+num3 number default null
+)
+is
+Addition number;
+substraction number;
+multiplication number;
+division number;
+
+begin
+if num3 is not null
+then
+Addition:=num1+num2+num3;
+substraction:=num1-num2-num3;
+multiplication:=num1*num2*num3;
+division:=num1/num2/num3;
+else
+Addition:=num1+num2;
+substraction:=num1-num2;
+multiplication:=num1*num2;
+division:=num1/num2;
+end if;
+dbms_output.put_line('Addition of value is : '||Addition);
+dbms_output.put_line('Substraction of value is : '||substraction);
+dbms_output.put_line('Multiplication of value is : '||multiplication);
+dbms_output.put_line('Division of value is : '||division);
+end;
+/
+
+exec arithmetic_operation(5,6,7);
+--exec arithmetic_operation(5,6);

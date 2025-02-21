@@ -1,0 +1,32 @@
+create table EmployeeB193(
+EmpID number primary key,
+EmpName varchar2(20),
+EmpCity varchar2(20),
+EmpSalary varchar2(20)
+);
+
+begin
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1001,'Kirtan','Ahemdabad','25000');
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1002,'Sujal','Surat','20000');
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1003,'Purav','Rajkot','35000');
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1004,'Nihir','Amreli','40000');
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1005,'Manan','vadodra','45000');
+end;
+/
+
+create or replace procedure display(eID in EmployeeB193.EmpID%TYPE)
+is
+Emp_ID EmployeeB193.EmpID%TYPE;
+Emp_Name EmployeeB193.EmpName%TYPE;
+Emp_city EmployeeB193.EmpCity%TYPE;
+Emp_salary EmployeeB193.EmpSalary%TYPE;
+begin
+select EmpID,EmpName,EmpCity,EmpSalary into Emp_ID,Emp_Name,Emp_city,Emp_salary from EmployeeB193 where EmpID=eID;
+dbms_output.put_line('Employee id is : '||Emp_id);
+dbms_output.put_line('Employee Name is : '||Emp_Name);
+dbms_output.put_line('Employee City is : '||Emp_city);
+dbms_output.put_line('Employee Salary is : '||Emp_salary);
+end;
+/
+
+exec display(1002);

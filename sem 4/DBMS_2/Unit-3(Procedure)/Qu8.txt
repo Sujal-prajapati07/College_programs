@@ -1,0 +1,31 @@
+create table CustomerB193(
+cid number primary key,
+cname varchar2(30),
+ccity varchar2(30),
+cmobile varchar2(20)
+);
+
+begin
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (1,'Sujal','Ahmedabad','8596741525');
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (2,'Kirtan','Surat','7496368515');
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (3,'Purav','Rajkot','9675842386');
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (4,'Nihir','vadodra','3685749542');
+end;
+/
+
+
+create or replace procedure insert_row(
+new_customerID in number,
+new_customerName in varchar2,
+new_customerCity in varchar2,
+new_customerMobile in varchar2
+)
+as
+begin
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (new_customerID,new_customerName,new_customerCity,new_customerMobile);
+end;
+/
+
+exec insert_row(5,'Manan','Amreli','8574965236');
+
+select * from CustomerB193;

@@ -1,0 +1,32 @@
+create table EmployeB193(
+eid int,
+ename varchar(100),
+esalary double precision
+);
+begin
+insert into EmployeB193 (eid,ename,esalary) values (1,'Sujal',25000);
+insert into EmployeB193 (eid,ename,esalary) values (2,'Kirtan',20000);
+insert into EmployeB193 (eid,ename,esalary) values (3,'Dinesh',30000);
+end;
+/
+
+create or replace Procedure update_salary(
+userID IN EmployeB193.eid%TYPE,
+update_salary IN EmployeB193.esalary%TYPE
+)
+is
+e_id EmployeB193.eid%TYPE;
+e_name EmployeB193.ename%TYPE;
+e_salary EmployeB193.esalary%TYPE;
+begin
+select eid,ename,esalary into e_id,e_name,e_salary from EmployeB193 where eid=userID;
+dbms_output.put_line('Employee id is : '||e_id);
+dbms_output.put_line('Employee Name is : '||e_name);
+dbms_output.put_line('Employee salary is : '||e_salary);
+
+update EmployeB193 set esalary=update_salary where eid=userID;
+dbms_output.put_line('Employee update salary is : '||update_salary);
+end ;
+/
+
+exec update_salary(3,50000);

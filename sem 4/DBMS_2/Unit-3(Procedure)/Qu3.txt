@@ -1,0 +1,27 @@
+create or replace procedure s3
+	As
+	begin
+	dbms_output.put_line('Hello');
+	end;
+	/
+
+execute s3();
+
+create table employeeB193(emp_id int,emp_name varchar(100));
+
+begin
+insert into employeeB193 values(1,'Kirtan');
+insert into employeeB193 values(2,'Sujal');
+insert into employeeB193 values(3,'Vaibhav');	
+end;
+/
+
+declare
+e_id int;
+e_name varchar(100);
+begin
+select emp_id,emp_name into e_id,e_name from employeeB193 where emp_id=2;
+dbms_output.put_line(e_id);
+dbms_output.put_line(e_name);
+end;
+/

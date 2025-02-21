@@ -1,0 +1,24 @@
+create or replace Procedure s4(a int,b int,c int)
+is
+begin
+if(a>b and a>c)
+then
+dbms_output.put_line('A is bigger');
+else if(b>a and b>c)
+then
+dbms_output.put_line('B is bigger');
+else
+dbms_output.put_line('C is bigger');
+end if;
+end if;
+end;
+/
+
+declare
+a int:=&a;
+b int:=&b;
+c int:=&c;
+begin
+s4(a,b,c);
+end;
+/

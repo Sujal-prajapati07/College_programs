@@ -1,0 +1,14 @@
+create or replace procedure s4(n int)
+is
+begin
+dbms_output.put_line('Square of number is : '||n*n);
+dbms_output.put_line('Cube of number is : '||n*n*n);
+end;
+/
+
+declare
+n int:=&n;
+begin
+s4(n);
+end;
+/
