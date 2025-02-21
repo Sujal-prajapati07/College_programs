@@ -1,0 +1,23 @@
+<!--Create an XML document Student where it contains the following data
+Student(Name (fname & Lname) , ID , Plan (courses) ). In
+courses element take (year) as an attribute and (course) as an
+sub-element . And Course has name , shortName , record as its
+sub element. And again record has its sub element Grade , date.
+Create An External DTD for the above XML document where :
+• Courses element can zero or more course.
+• Year attribute must appear in the element.
+• Record element should appear zero or more times.-->
+<!ELEMENT Student (Name,ID,Plan)>
+<!ELEMENT Name (fname,Lname)>
+<!ELEMENT Plan (courses)>
+<!ELEMENT courses (course*)>
+<!ELEMENT course (courseName,shortName,record*)>
+<!ELEMENT record (grade,date)>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT Lname (#PCDATA)>
+<!ELEMENT ID (#PCDATA)>
+<!ATTLIST courses year CDATA #REQUIRED>
+<!ELEMENT courseName (#PCDATA)>
+<!ELEMENT shortName (#PCDATA)>
+<!ELEMENT grade (#PCDATA)>
+<!ELEMENT date (#PCDATA)>

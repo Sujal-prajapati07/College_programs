@@ -1,0 +1,16 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="employee">
+		<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="children" minOccurs="1" maxOccurs="2">
+				<xsd:complexType>
+				<xsd:choice>
+					<xsd:element name="boy" type="xsd:string"></xsd:element>
+					<xsd:element name="girl" type="xsd:string"></xsd:element>
+				</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

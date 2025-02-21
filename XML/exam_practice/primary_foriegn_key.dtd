@@ -1,0 +1,11 @@
+<!ELEMENT students (student,course)>
+<!ELEMENT student (rollno,name)>
+<!ELEMENT course (content)>
+<!ELEMENT content (#PCDATA)>
+<!ENTITY info "Hello">
+<!ATTLIST student which_course CDATA #REQUIRED>
+<!ATTLIST student which_course ID #REQUIRED>
+<!ELEMENT rollno (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST course course_id CDATA #REQUIRED>
+<!ATTLIST course course_id IDREF #REQUIRED>

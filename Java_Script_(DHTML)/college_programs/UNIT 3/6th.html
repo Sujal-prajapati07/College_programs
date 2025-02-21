@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Employee Details</h1>
+        Name:<input type="text" id="name"><br><br>
+        Age:<input type="number" id="age"><br><br>
+        Department:<input tytpe="text" id="dept"><br><br>
+        Designation:<input type="text" id="design"><br><br>
+        No. Of Working Days:<input type="number" id="workingday"><br><br>
+        <input type="button" value="Register" onclick="display()"> 
+    </center>
+</body>  
+<script>
+    function display(){
+        if(document.getElementById("name").value=="" || document.getElementById("age").value=="" || document.getElementById("dept").value=="" || document.getElementById("design").value=="" || document.getElementById("workingday").value=="")
+        {
+            alert("Please Fill the all informations");
+        }
+        else if(document.getElementById("age").value<=18 || document.getElementById("age").value>100) 
+        {
+            alert("Please Enter the Age between 18 to 100");
+        }
+        else if(document.getElementById("workingday").value<25)
+        {
+            alert("salary is 8,000")
+        }
+        else if(document.getElementById("workingday").value>25)
+        {
+            alert("salary is 10,000")
+        }
+    }
+</script>
+</html>
+

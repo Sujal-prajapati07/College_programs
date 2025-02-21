@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--Create XML document for Student where it contains the following 
+data:
+Student Name, Personal Info (Address, Birthdate,Gender, Mobile
+No, Address) ,Result
+Create XSLT file which will sort result wise all the details in formated
+table.-->
+<students>
+	<student>
+		<StudentName>Sujal</StudentName>
+		<Personal_Info>
+			<Address>Ahmedabad</Address>
+			<Birthdate>06/05/2024</Birthdate>
+			<Gender>Male</Gender>
+			<MobileNo>4585963574</MobileNo>
+		</Personal_Info>
+		<Result>Pass</Result>
+	</student>
+	<student>
+		<StudentName>Kirtan</StudentName>
+		<Personal_Info>
+			<Address>Surat</Address>
+			<Birthdate>07/05/2024</Birthdate>
+			<Gender>Male</Gender>
+			<MobileNo>8596748515</MobileNo>
+		</Personal_Info>
+		<Result>Pass</Result>
+	</student>
+	<student>
+		<StudentName>Purav</StudentName>
+		<Personal_Info>
+			<Address>Rajkot</Address>
+			<Birthdate>08/05/2024</Birthdate>
+			<Gender>Male</Gender>
+			<MobileNo>4785963574</MobileNo>
+		</Personal_Info>
+		<Result>Fail</Result>
+	</student>
+	<student>
+		<StudentName>Nihir</StudentName>
+		<Personal_Info>
+			<Address>Jamnagar</Address>
+			<Birthdate>09/05/2024</Birthdate>
+			<Gender>Male</Gender>
+			<MobileNo>7496851475</MobileNo>
+		</Personal_Info>
+		<Result>Pass</Result>
+	</student>
+	<student>
+		<StudentName>Manan</StudentName>
+		<Personal_Info>
+			<Address>Vadodra</Address>
+			<Birthdate>10/05/2024</Birthdate>
+			<Gender>Male</Gender>
+			<MobileNo>3565748596</MobileNo>
+		</Personal_Info>
+		<Result>Fail</Result>
+	</student>
+</students>

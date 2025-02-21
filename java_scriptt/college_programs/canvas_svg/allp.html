@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    Name:<input type="text" id="n1"><br><br>
+    Password:<input type="password" id="p1"><br><br>
+    <input type="button" value="submit" onclick="display()">
+    <p id="d1"></p>
+    <p id="d2"></p>
+    </center>
+</body>
+    <script>
+        function display(){
+            if(document.getElementById("n1").value=="" || document.getElementById("p1").value=="")
+            {
+                alert("Please fill the all information");
+            }
+            else if(document.getElementById("p1").value.length==8)
+            {
+                alert("Password should be 8 character");
+            }
+            else{
+                document.getElementById("d1").innerHTML=document.getElementById("n1").value;
+                document.getElementById("d2").innerHTML=document.getElementById("p1").value;
+            }
+        }
+    </script>
+</html>

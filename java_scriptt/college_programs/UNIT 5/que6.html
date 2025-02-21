@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rectangle Inside Canvas</title>
+    <style>
+      canvas {
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="200" height="150"></canvas>
+
+    <script>
+      // Get the canvas element
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+
+      // Define rectangle properties
+      var x = 50;
+      var y = 50;
+      var width = 90;
+      var height = 50;
+
+      // Draw the rectangle
+      ctx.beginPath();
+      ctx.rect(x, y, width, height);
+      ctx.stroke();
+    </script>
+  </body>
+</html>

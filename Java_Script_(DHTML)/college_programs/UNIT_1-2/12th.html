@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Question 12</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: bisque;
+    }
+  </style>
+  <body>
+    <div class="cont">
+      <h1>
+        Enter your 5 Subject marks to calculate <br />
+        the total and percentage of it !
+      </h1>
+      <br /><br />
+      Enter marks of English : <input type="number" id="english" /> <br /><br />
+      Enter marks of Maths : <input type="number" id="maths" /> <br /><br />
+      Enter marks of Hindi : <input type="number" id="hindi" /> <br /><br />
+      Enter marks of Science : <input type="number" id="sci" /> <br /><br />
+      Enter marks of Social Science :
+      <input type="number" id="ss" /> <br /><br />
+      <p>
+        Percentage :- <span id="per">0%</span> <br />
+        <br />
+        Total Marks obtained :-
+        <span id="marks">0/500</span>
+        <br />
+        <br />
+        Grade :- <span id="grade"></span>
+      </p>
+      <br />
+      <button onclick="calculate()">Submit</button>
+    </div>
+    <script>
+        function calculate() {
+    let englishMarks = parseInt(document.getElementById("english").value);
+    let mathsMarks = parseInt(document.getElementById("maths").value);
+    let scienceMarks = parseInt(document.getElementById("sci").value);
+    let ssMarks = parseInt(document.getElementById("ss").value);
+    let hindiMarks = parseInt(document.getElementById("hindi").value);
+    let total = englishMarks + mathsMarks + scienceMarks + ssMarks + hindiMarks;
+    document.getElementById("marks").innerHTML = total + "/500";
+    let per = total / 5;
+    document.getElementById("per").innerHTML = per + "%";
+    gradeCal(per);
+}
+
+function gradeCal(per) {
+    if (per > 70 && per < 100) {
+        document.getElementById("grade").innerHTML = "Distinction";
+    } else if (per > 60 && per < 70) {
+        document.getElementById("grade").innerHTML = "First Class";
+
+    } else if (per > 50 && per < 60) {
+        document.getElementById("grade").innerHTML = "Second Class";
+
+    } else if (per > 35 && per < 50) {
+        document.getElementById("grade").innerHTML = "Average";
+
+    } else {
+        document.getElementById("grade").innerHTML = "Fail";
+    }
+}
+    </script>
+  </body>
+</html>

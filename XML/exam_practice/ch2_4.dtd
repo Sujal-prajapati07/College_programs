@@ -1,0 +1,17 @@
+<!ELEMENT students (Student_Name,Personal_Info,Result)>
+<!ELEMENT Student_Name (#PCDATA)>
+<!ELEMENT Personal_Info (Address,Birthdate,Gender,MobileNo)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Birthdate (#PCDATA)>
+<!ELEMENT Gender ( Male | Female )>
+<!ELEMENT Male (#PCDATA)>
+<!ELEMENT Female (#PCDATA)>
+<!ELEMENT MobileNo (#PCDATA)>
+<!ELEMENT Result (Total,Percentage,Grade)>
+<!ELEMENT Total (#PCDATA)>
+<!ELEMENT Percentage (#PCDATA)>
+<!ELEMENT Grade ( Pass | Fail | Dist | Second)>
+<!ELEMENT Pass (#PCDATA)>
+<!ELEMENT Fail (#PCDATA)>
+<!ELEMENT Dist (#PCDATA)>
+<!ELEMENT Second (#PCDATA)>

@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE Result SYSTEM "practise.dtd">
+<Result>
+	<Name enrolled="185">
+		<fname>Sujal</fname>
+		<lname>Prajapati</lname>
+	</Name>
+	<Gender>
+		<Male>yes</Male>
+	</Gender>
+	<Address area="Bapunagar">Ahmedabad</Address>
+	<Email above=":">sujal123@gmail.com</Email>
+	<Subject>XML</Subject>
+	<Marks>90</Marks>
+	<College u_d="A01"> GLS </College>
+</Result>

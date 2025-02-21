@@ -1,0 +1,26 @@
+#calculator{
+    border: 1px solid rgb(186, 178, 178);
+    border-radius: 5px;
+    width: 210px;
+    height: 390px;
+    background-color: black;
+}
+#display{
+    margin: 10px;
+    width:90%;
+    font-size: 35px;
+    text-align:right;
+}
+.button_contain{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.button{
+    height: 47px;
+    width:50px;
+    margin: 3px;
+    background-color: blue;
+    color: white;
+    font-size: large;
+}

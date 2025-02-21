@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smiley Face</title>
+  <style>
+    canvas {
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="250" height="200"></canvas>
+  <script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+    // Draw Face
+    ctx.beginPath();
+    ctx.arc(120, 100, 90, 0, 2 * Math.PI);
+    ctx.fillStyle = 'yellow';
+    ctx.fill();
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 5;
+    ctx.stroke();
+
+    // Draw Eyes
+    ctx.beginPath();
+    ctx.arc(80, 80, 15, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'black';
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(150, 80, 15, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(85, 80, 10, 0, 2 * Math.PI);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(155, 80, 10, 0, 2 * Math.PI);
+    ctx.fill();
+
+    // Draw Nose
+    ctx.beginPath();
+    ctx.arc(120, 110, 13, 0, 2 * Math.PI);
+    ctx.fillStyle = '#8bd2e8';
+    ctx.fill();
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Draw Mouth
+    ctx.beginPath();
+    ctx.arc(120, 90, 70, Math.PI * 0.2, Math.PI * 0.8);
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+  </script>
+</body>
+</html>

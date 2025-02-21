@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Validation Form</h1><br><br>
+        Email:<input type="email" id="mail"><br><br>
+        Password:<input type="password" id="pass"><br><br>
+        Retypepassword:<input type="password" id="repass"><br><br>
+        <input type="button" value="Register" onclick="display()">
+        <p id="k1"></p>
+        <p id="k2"></p>
+    </center>
+</body>
+<script>
+    function display(){
+        if(document.getElementById("mail").value=="" || document.getElementById("pass").value=="")
+        {
+            alert("All Fields Are should be compulsory");
+        }
+        else if(document.getElementById("pass").value.length<8)
+        {
+            alert("Password Must be Greater than 8 character");
+        }
+        else if(document.getElementById("pass").value!=document.getElementById("repass").value)
+        {
+            alert("Retype Password is not same");
+        }
+        else{
+            document.getElementById("k1").innerHTML="Email:"+document.getElementById("mail").value;
+            document.getElementById("k2").innerHTML="Password:"+document.getElementById("pass").value;
+        }
+    }
+</script>
+</html>

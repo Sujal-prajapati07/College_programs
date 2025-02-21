@@ -1,0 +1,11 @@
+<!--Create an XML document Books where it contains the following data :
+Books (book (title) as an attribute , author , year , publisher ). 
+Create An External DTD for the above XML document where 
+• Elements should be in sequense.
+• Attribute title should have only two values i.e XML or
+DCN-->
+<!ELEMENT Books (author,year,publisher)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ATTLIST Books book CDATA #FIXED "XML">

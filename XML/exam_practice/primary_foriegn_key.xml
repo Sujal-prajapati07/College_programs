@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE students SYSTEM "primary_foriegn_key.dtd">
+<students>
+	<student which_course="oop">
+		<rollno>101</rollno>
+		<name>sujal</name>
+	</student>
+	<course course_id="102">
+		<content>&info;</content>
+	</course>
+</students>

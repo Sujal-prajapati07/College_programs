@@ -1,0 +1,18 @@
+<!ELEMENT Result (Name,Gender,Address,Email,Subject,Marks+,College)>
+<!ELEMENT Name (fname,lname)>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT lname (#PCDATA)>
+<!ELEMENT College (#PCDATA)>
+<!ATTLIST College u_d CDATA #REQUIRED>
+<!ATTLIST College u_d IDREF #REQUIRED>
+<!ATTLIST Name enrolled CDATA #REQUIRED>
+<!ATTLIST Name enrolled ID #REQUIRED>
+<!ELEMENT Address (#PCDATA)>
+<!ATTLIST Address area CDATA #REQUIRED>
+<!ELEMENT Gender ( Male | Female )>
+<!ELEMENT Male (#PCDATA)>
+<!ELEMENT Female (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ATTLIST Email above NMTOKEN #REQUIRED>
+<!ELEMENT Subject (#PCDATA)>
+<!ELEMENT Marks (#PCDATA)>

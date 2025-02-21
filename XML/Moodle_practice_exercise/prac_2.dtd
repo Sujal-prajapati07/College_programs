@@ -1,0 +1,23 @@
+<!-- Create XML document for Employee where it contains the following data:
+Employee Name, Personal Info (Address, Birthdate,Gender, Mobile
+No,) ,Salary(Net salary, Gross salary, HRA, DA), Designation
+Create External DTD declaration for Employee where
+• Gender has only two choices Male and Female as an element.
+• Designation has an attribute post and value should be Manager,Technical 
+Consultant, Executive, HR-->
+<!ELEMENT Employee (Employee_Name,Personal_info,Salary,Designation)>
+<!ELEMENT Employee_Name (#PCDATA)>
+<!ELEMENT Personal_info (Address,Birthdate,Gender,MobileNo)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Birthdate (#PCDATA)>
+<!ELEMENT Gender (Male | Female)>
+<!ELEMENT Male (#PCDATA)>
+<!ELEMENT Female (#PCDATA)>
+<!ELEMENT MobileNo (#PCDATA)>
+<!ELEMENT Salary (Net_salary,Gross_salary,HRA,DA)>
+<!ELEMENT Net_salary (#PCDATA)>
+<!ELEMENT Gross_salary (#PCDATA)>
+<!ELEMENT HRA (#PCDATA)>
+<!ELEMENT DA (#PCDATA)>
+<!ELEMENT Designation (#PCDATA)>
+<!ATTLIST Designation post CDATA #FIXED "Manager">

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--Create an XML document for storing personal information about
+student where it contains the following data:
+Personal Info( Roll no, Name, Address, Mobile, DOB, Age,Qualification)
+Create An External DTD for the above XML document.-->
+<!DOCTYPE Personal_info SYSTEM "prac_1.dtd">
+<Personal_info>
+	<Roll_no>81</Roll_no>
+	<Name>Sujal</Name>
+	<Address>Ahmedabad</Address>
+	<Mobile>8596745256</Mobile>
+	<DOB>5/6/2024</DOB>
+	<Age>19</Age>
+	<Qualification>12th pass</Qualification>
+</Personal_info>

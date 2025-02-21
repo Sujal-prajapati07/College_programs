@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Registraion Form </h1><br><br>
+        Username:<input type="text" id="Username"><br><br>
+        Password:<input type="password" id="pass"><br><br>
+        Retypepassword:<input type="password" id="repass"><br><br>
+        <input type="button" value="Submit" onclick="display()">
+        <p id="k1"></p>
+        <p id="k2"></p>
+    </center>
+</body>
+<script>
+    function display(){
+        if(document.getElementById("Username").value=="" || document.getElementById("pass").value=="")
+        {
+            alert("All Fields Are should Be compulsary");
+        }
+        else if(document.getElementById("Username").value.length <8)
+        {
+            alert("Name should be greater than 8 character");
+        }
+        else if(document.getElementById("pass").value.length<8)
+        {
+            alert("Password should be greater than 8 character");
+        }
+        else if(document.getElementById("pass").value!=document.getElementById("repass").value)
+        {
+            alert("Retype Password is not same");
+        }
+        else{
+            document.getElementById("k1").innerHTML="Username:"+document.getElementById("Username").value;
+            document.getElementById("k2").innerHTML="Password:"+document.getElementById("pass").value;
+
+        }
+    }
+</script>
+</html>

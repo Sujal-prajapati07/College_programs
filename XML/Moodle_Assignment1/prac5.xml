@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--Create an XML document Books where it contains the following data :
+Books (book (title) as an attribute , author , year , publisher )-->
+<Books>
+	<book title="C Programming">
+		<author>Sujal</author>
+		<year>2024</year>
+		<Publisher>Kirtan</Publisher>
+	</book>
+</Books>
+
+ 

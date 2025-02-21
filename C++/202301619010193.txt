@@ -1,0 +1,376 @@
+<----------------------------------------------Unit-1--------------------------------------------------------->
+
+<--Write a c++ program to display numbers divisible with 7 from 1 to 100(using
+while, for, do.. while)-->
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	for (int i = 1; i <= 100; ++i)
+	{
+		if(i%7==0)
+		{
+			cout<<i<<endl;
+		}
+	}
+	return 0;
+}
+
+<-- write a c++ program to find a number is positive or negative.(use ternary
+operator, also with simple if...else)-->
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n;
+	cout<<"Enter a number to check number is positive or negative\n";
+	cin>>n;
+
+	(n>0)?cout<<"Positive\n":cout<<"Negative\n";
+	return 0;
+}
+
+<----------------------------------------------Unit-2--------------------------------------------------------->
+
+<--Write a C++ to create a class Subject to print the detail of Subject Code, 
+Subject Name using objects.-->
+
+#include<iostream>
+using namespace std;
+class cec
+{
+private:
+	int a;
+	string b;
+public:
+	cec(int n1, string n2)
+	{
+		a = n1;
+		b = n2;
+	}
+	void printdata()
+	{
+		cout<<"Subject Code "<<a<<endl;
+		cout<<"Subject Name "<<b<<endl;
+	}
+};
+int main()
+{
+	cec c(15,"Kartik");
+	c.printdata();
+	return 0;
+}
+
+<--Write a C++ Program to find the sum of Numbers using Recursive 
+Function-->
+
+#include<iostream>
+using namespace std;
+class cec
+{
+public:
+	int sumofnumber(int n)
+	{
+		if(n<=1)
+		{
+			return n;
+		}
+		else
+		{
+			return n+sumofnumber(n-1);
+		}
+	}
+};
+int main()
+{
+	cec c;
+	int n;
+	cout<<"Enter the number \n";
+	cin>>n;
+
+	int result = c.sumofnumber(n);
+	cout<<"Sum of numbers is : "<<result<<endl;
+
+	return 0;
+}
+
+<--Write a c++ Program to demonstrate the use of Friend class to access the 
+member of one class.-->
+
+#include<iostream>
+using namespace std;
+class B;
+class A
+{
+	int x = 100;
+	friend class B; // if we comment this line than we give a error
+};
+class B
+{
+	int y = 300;
+	public:
+		int add(A &a1)
+		{
+			int c = a1.x+y;
+			return c;
+		}
+};
+int main()
+{
+	A a1;
+	B b1;
+	cout<<"\n a// // CEC 2.3nswer = "<<b1.add(a1)<<endl;
+}
+
+
+<--Write a C++ Program to find the cube of a number using Inline Function-->
+
+#include<iostream>
+using namespace std;
+class cec
+{
+public:
+	inline int cube(int n)
+	{
+		return n*n*n;
+	}
+};
+int main()
+{
+	cec c;
+	int n;
+	cout<<"Enter the Number you want the cube\n";
+	cin>>n;
+
+	int result = c.cube(n);
+	cout<<"Cube of "<<n<<" is :"<<result<<endl;
+	return 0;
+}
+
+<----------------------------------------------Unit-3--------------------------------------------------------->
+
+<--Write a C++ Program to enter 10 student details (Roll,Name) using array
+of Object.-->
+
+#include<iostream>
+using namespace std;
+class cec
+{
+private:
+	int roll;
+	string name;
+public:
+	void getdata()
+	{
+		cout<<"Enter the rollno of student\n";
+		cin>>roll;
+
+		cout<<"Enter the name of student\n";
+		cin>>ws;
+		getline(cin,name);
+	}
+	void printdata()
+	{
+		cout<<"Rollno of Student : "<<roll<<endl;
+		cout<<"Name of Student : "<<name<<endl;
+	}
+};
+int main()
+{
+	cec c[10];
+
+	for (int i = 0; i < 10; ++i)
+	{
+		cout<<"Enter the details of "<<i<<" Student\n";
+		c[i].getdata();
+	}
+	for (int i = 0; i < 10; ++i)
+	{
+		cout<<"Details of "<<i<<" the Student\n";
+		c[i].printdata();
+	}
+	return 0;
+}
+
+<--Write a C++ Program to enter two strings from user and append first string
+to another string-->
+
+#include<iostream>
+using namespace std;
+class cec
+{
+public:
+	string a;
+	string b;
+};
+int main()
+{
+	cec c;
+	cout<<"Enter the first string\n";
+	cin>>c.a;
+
+	cout<<"Enter the second string\n";
+	cin>>c.b;
+
+	c.a.append(" ");
+	c.a.append(c.b);
+
+	cout<<"After Appending the two string : "<<c.a<<endl;
+
+	return 0;
+}
+
+<----------------------------------------------Unit-4--------------------------------------------------------->
+
+<--Write a C++ Program to display largest among two numbers using function
+templates. Pass Integer, Float and Character as parameter to the template-->
+
+#include<iostream>
+using namespace std;
+class cec
+{
+public:
+	template<typename T>
+	void largest(T a, T b)
+	{
+		if(a>b)
+		{
+			cout<<"Maximum is : "<<a<<endl;
+		}
+		else
+		{
+			cout<<"Maximum is : "<<b<<endl;
+		}
+	}
+};
+int main()
+{
+	cec c;
+	c.largest<int>(30,20);
+	c.largest<float>(10.55,10.50);
+	c.largest<char>('c','a');
+
+	return 0;
+}
+
+<-- Write a program that has a template class STUDENT to read and print the details
+of student.Use multiple arguments-->
+
+#include<iostream>
+using namespace std;
+template<class T, class S>
+class cec
+{
+private:
+	T roll;
+	S name;
+public:
+	cec(T n1, S n2)
+	{
+		roll = n1;
+		name = n2;
+	}
+	void printdata()
+	{
+		cout<<"Rollno of Student : "<<roll<<endl;
+		cout<<"Name of Student : "<<name<<endl;
+	}
+};
+int main()
+{
+	int roll;
+	string name;
+
+	cout<<"Enter the Rollno of student\n";
+	cin>>roll;
+
+	cout<<"Enter the Name of student\n";
+	cin>>ws;
+	getline(cin,name);
+
+	cec <int,string>c(roll,name);
+	c.printdata();
+	return 0;
+}
+
+<----------------------------------------------Unit-5--------------------------------------------------------->
+
+ <--Write a C++ program to accept an email address and throw an exception if it does
+not contain @ symbol.-->
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	string s;
+	cout<<"Enter your Gmail\n";
+	cin>>s;
+	int flag=0;
+	char c = '@';
+
+	try
+	{
+		for (int i = 0; s[i] != '\0'; ++i)
+		{
+			if(s[i] == c)
+			{
+				flag=1;
+			}
+		}
+		throw flag;
+	}
+	catch(int flag)
+	{
+		if(flag==1)
+		{
+			cout<<"@ symbol is contain\n";
+		}
+		else
+		{
+			cout<<"@ symbol is not contain\n";
+		}
+
+	}
+	return 0;
+}
+
+<-- Write a C++ program to take a value from user and check the number is
+armstrong or not, If not than raise an exception-->
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int rev=0;
+	int n,rem=0;
+
+	cout<<"Enter the positive integer for check number is armstrong or not\n";
+	cin>>n;
+
+	int temp = n;
+
+	try
+	{
+		while(n > 0)
+		{
+			rem = n % 10;
+			rev = rev + (rem*rem*rem);
+			n = n / 10;
+		}
+		throw rev;
+	}
+	catch(int rev)
+	{
+		if(rev == temp)
+		{
+			cout<<"Number is Armstrong\n";
+		}
+		else
+		{
+			cout<<"Number is not Armstrong\n";
+		}
+	}
+	return 0;
+}

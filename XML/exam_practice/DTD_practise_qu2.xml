@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--Create XML document for Employee where it contains the following data:
+ Employee Name, Personal Info (Address, Birthdate,Gender, Mobile
+ No,) ,Salary(Net salary, Gross salary, HRA, DA), Designation
+ Create External DTD declaration for Employee where
+ • Gender has only two choices Male and Female as an element.
+ • Designation has an attribute post and value should be Manager,Technical 
+Consultant, Executive, HR-->
+<!DOCTYPE Employee SYSTEM "DTD_practise_qu2.dtd">
+<Employee>
+	<Employee_name>Sujal</Employee_name>
+	<Personal_info>
+		<Address>Ahmedabad</Address>
+		<Birthdate>20/11/2024</Birthdate>
+		<Gender>
+			<Male></Male>
+		</Gender>
+		<Mobile_No>5285749635</Mobile_No>
+	</Personal_info>
+	<Salary>
+		<Net_salary>52000</Net_salary>
+		<Gross_salary>60000</Gross_salary>
+		<HRA>42000</HRA>
+		<DA>25000</DA>
+	</Salary>
+	<Designation Post="HR"></Designation>
+</Employee>

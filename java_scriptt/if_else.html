@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Check Age</title>
+     <style>
+        body{
+            background-color: aqua;
+        }
+        button{
+            background-color: black;
+            color: azure;
+        }
+     </style>
+    </head>
+    <body>
+        <h1 style="color:blue;">Check user age</h1>
+        <input type="number" id="number" placeholder="Enter Your age"><br><br>
+        <button type="button" onclick="age()">Submit</button>
+        <script>
+            function age(){
+                let a=document.getElementById("number").value;
+                if(a>=6 && a<=17)
+                {
+                    alert("You are Eligible for education");
+                }
+                else if(a>=18 && a<21)
+                {
+                    alert("you are Eligible for voting");
+                }
+                else if(a>=21)
+                {
+                    alert("you are eligible for marriage");
+                }
+                else{
+                    alert("you are not eligible for any situation");
+                }
+            }
+        </script>
+    </body>
+</html>

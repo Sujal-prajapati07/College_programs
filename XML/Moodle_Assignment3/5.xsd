@@ -1,0 +1,29 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="Template">
+		<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string"></xsd:element>
+			<xsd:element name="Business_info">
+				<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="company" type="xsd:string"></xsd:element>
+					<xsd:element name="Department" type="xsd:string"></xsd:element>
+					<xsd:element name="Manager" type="xsd:string"></xsd:element>
+					<xsd:element name="phone_no" type="xsd:string"></xsd:element>
+					<xsd:element name="Email" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		
+		<xsd:element name="Personal_info">
+				<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="Phone_no" type="xsd:double"></xsd:element>
+					<xsd:element name="Address" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

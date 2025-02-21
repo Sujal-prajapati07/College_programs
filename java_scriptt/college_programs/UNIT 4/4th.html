@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Assignment 4.4 </title>
+    <style>
+        fieldset{
+            width: 400px;
+            margin-top: 80px;
+            height: 500px;
+            font-size: 25px;
+        }
+        form{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+      
+    <fieldset>
+        <h1 style="color: red;">User Details</h1>
+	<form>
+		<table>
+			<tr>
+				<td> <lable>Username</lable></td>
+				<td> <input type="text" name="name" id="name"></td>
+			</tr>
+			<tr>
+				<td> <label>Password</label></td>
+				<td> <input type="password" name="password" id="pass"></td>
+			</tr>
+			<tr>
+				<td> <lable>City of Employment</lable></td> 
+				<td><input type="text" name="city" id="city"></td>
+			</tr>
+			<tr>
+				<td> <label>Web server</label></td>
+				<td> <select id = "selectid" onchange="change()">
+			<option value=""> -- Choose a server --</option>
+			<option value="Local server">Local server</option>
+			<option value="Main server">Main server</option>
+		</select></td>
+		</tr>
+		<tr> 
+			<td><label> Please specify<br> your role:</label></td>
+			<td> <input type="radio" name="name" id="admin">Admin<br>
+				 <input type="radio" name="name" id="engineer">Engineer<br>
+				 <input type="radio" name="name" id="manager">Manager<br>
+				 <input type="radio" name="name" id="guest">Guest<br>
+			</td>
+		</tr>
+		<tr>
+			<td><label> Single Sign-on<br> So the following:</label></td>
+			<td> <input type="checkbox" value="Mail" id = "mail"		>Mail<br>
+				 <input type="checkbox" value="Payroll" id = "payroll">Payroll<br>
+				 <input type="checkbox" value="Self-service" id = "self-service">Self-service<br>
+			</td>
+		</tr>
+		<tr align="center">
+			<td colspan = "2"> <input type="button" value = "Login" onclick="validate()">  <input type="submit" value="Reset"></td>
+		</tr>
+</table>
+	</form>
+	<p id = "P1" ></p>
+	<p id = "P"></p>
+	<p id = "p2"></p>
+	<p id = "P3"></p>
+	<p id = "P4"></p>
+</fieldset>
+
+</center>
+
+
+</body>
+
+<script type="text/javascript">
+    function change()
+    {
+        alert("Web server will be change ");
+    }
+    function validate()
+    {
+        var a=document.getElementById("name").value;
+        var b=document.getElementById("pass").value;
+        var c=document.getElementById("city").value;
+        var d=document.getElementById("admin").checked;
+        var e=document.getElementById("engineer").checked;
+        var f=document.getElementById("manager").checked;
+        // var g=document.getElementById("guest").checked;
+        // var h=document.getElementById("mail").checked;
+        // var i=document.getElementById("payroll").checked;
+        var j=document.getElementById("self-service").checked;
+        var selecttag = document.getElementById("selectid");
+        var seloption = selecttag.options[selecttag.selectedIndex].value;
+        document.getElementById("P1").innerHTML = "<br>Username : "+a+ "<br>Password : "+b+ "<br>City of Employment : " +c+ "<br>Web Server : " +seloption;
+
+        if(a===""&&b===""&&c===""&&seloption==="")
+        {
+            alert("All filed are required.");
+            return false;
+        }
+        if(a==="")
+        {
+            alert("Name is compulsory.");
+            return false;
+        }
+        if(b==="")
+        {
+            alert("Password is compulsory.");
+            return false;
+        }
+        if(c==="")
+        {
+            alert("City is compulsory.");
+            return false;
+        }
+        if (seloption==="")
+        {
+            alert("Select a server.");
+            return false;
+        }
+        if(d===true)
+        {
+            document.getElementById("P").innerHTML = "<br>Please specify your role : Admin";
+            return false;
+        }
+        if(e===true)
+        {
+            document.getElementById("P").innerHTML = "<br>Please specify your role : Engineer";
+            return false;
+        }
+        if(f===true)
+        {
+            document.getElementById("P").innerHTML = "<br>Please specify your role : Manager";
+            return false;
+        }
+        if(g===true)
+        {
+            document.getElementById("P").innerHTML = "<br>Please specify your role : Guest";
+            return false;
+        }
+        if(!d&&!e&&!f&&!g)
+        {
+            alert("Chose one Role");
+            return false;
+        }
+    
+    }
+</script>
+</html>

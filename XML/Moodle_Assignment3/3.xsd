@@ -1,0 +1,36 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="student">
+		<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="student_name" type="xsd:string"></xsd:element>
+			
+			<xsd:element name="personal_info">
+				<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="Address" type="xsd:string"></xsd:element>
+					<xsd:element name="Birthdate" type="xsd:string"></xsd:element>
+					<xsd:element name="Gender" type="xsd:string"></xsd:element>
+					<xsd:element name="Mobile_no">
+						<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="10"></xsd:length>
+						</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+				</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+				
+			<xsd:element name="Result">
+				<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="Total" type="xsd:int"></xsd:element>
+					<xsd:element name="percentage" type="xsd:int"></xsd:element>
+					<xsd:element name="Grade" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

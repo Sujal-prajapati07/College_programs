@@ -1,0 +1,16 @@
+<!-- Create an XML document Email where it contains the following data :
+ Email (from , to ,content ( person , exercises(exercise (topic ,
+description) ) , course ).
+Create An External DTD for the above XML document where 
+• Content element of email should be mixed content.
+• Exercises can have multiple exercise element. -->
+<!ELEMENT Email (#PCDATA | from | to | content)*>
+<!ELEMENT content (person,exercises,course)>
+<!ELEMENT exercises (exercise+)>
+<!ELEMENT exercise (topic,description)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT person (#PCDATA)>
+<!ELEMENT topic (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT course (#PCDATA)>

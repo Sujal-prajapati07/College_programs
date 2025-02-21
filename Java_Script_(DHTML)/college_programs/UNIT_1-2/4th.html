@@ -1,0 +1,85 @@
+<!-- 4. Write a JavaScript to demonstrate the Comparison Operators. -->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <script>
+        function insert(){
+            let a,b;
+            a=Number(prompt("Enter the number1:"));
+            document.getElementById("value_1").value=a;
+            b=Number(prompt("Enter the number2"));
+            document.getElementById("value_2").value=b;
+        }
+        function grater(){
+            let a,b;
+            a=Number(document.getElementById("value_1").value);
+            b=Number(document.getElementById("value_2").value);
+            let c;
+            c=a>b;
+            document.getElementById("answer").value=+c;
+        }
+        function less(){
+            let a,b;
+            a=Number(document.getElementById("value_1").value);
+            b=Number(document.getElementById("value_2").value);
+            let c;
+            c=a<b;
+            document.getElementById("answer").value=+c;
+        }
+        function lesseq(){
+            let a,b;
+            a=Number(document.getElementById("value_1").value);
+            b=Number(document.getElementById("value_2").value);
+            let c;
+            c=a<=b;
+            document.getElementById("answer").value=+c;
+        }
+        function gratereq(){
+            let a,b;
+            a=Number(document.getElementById("value_1").value);
+            b=Number(document.getElementById("value_2").value);
+            let c;
+            c=a>=b;
+            document.getElementById("answer").value=+c;
+        }
+        function doubleeq(){
+            let a,b;
+            a=Number(document.getElementById("value_1").value);
+            b=Number(document.getElementById("value_2").value);
+            let c;
+            c=(a==b);
+            document.getElementById("answer").value=+c;
+        }
+        function noteq(){
+            let a,b;
+            a=Number(document.getElementById("value_1").value);
+            b=Number(document.getElementById("value_2").value);
+            let c;
+            c=(a!=b);
+            document.getElementById("answer").value=+c;
+        }
+    </script>
+    <h2>Enter the number:</h2>
+    <input type="text" id="value_1"><br><br>
+    <input type="text" id="value_2"><br><br>
+    <div>
+        <button type="button" onclick="insert()">Check</button><br><br>
+    </div>
+    <button type="button" onclick="grater()">Grater(>)</button>
+    <button type="button" onclick="less()">Less(<)</button>
+    <button type="button" onclick="lesseq()">Lesseq(<=)</button>
+    <button type="button" onclick="gratereq()">Gratereq(>=)</button>
+    <button type="button" onclick="doubleeq()">Doubleeq(==)</button>
+    <button type="button" onclick="noteq()">Noteq(==)</button><br>
+    <h3>Answer:</h3>
+    <textarea id="answer"></textarea>
+</center>
+
+
+</body>
+</html>

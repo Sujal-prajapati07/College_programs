@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JHKJHKJ</title>
+        </head>
+        <body style="background-color: aqua;">
+            <pre>
+                <form>
+                first name:<input type="text" id="firstname">
+                Last name:<input type="text" id="lastname">
+                Phone number:<input type="number" id="number">
+                Address:<input type="text" id="address">
+                Email:<input type="email" id="email"><br>
+                <button type="button" onclick="submitform()">Submit</button><br>
+                <button type="reset" style="background-color:pink;">Reset</button>
+            </form>
+        </pre>
+                <div id="userdetails"></div>
+                <script>
+                    function submitform(){
+                        var firstname=document.getElementById("firstname").value;
+                        var lastname=document.getElementById("lastname").value;
+                        var phonenumber=document.getElementById("number").value;
+                        var address=document.getElementById("address").value;
+                        var email=document.getElementById("email").value;
+
+                        var DETAILS=document.getElementById("userdetails");
+                        DETAILS.innerHTML = '<p> First name:'+ firstname + '</p>' +
+                        '<p> Last name:'+lastname +'</p>'+ 
+                        '<p> Phone number:'+ phonenumber +'</p>' +
+                        '<p> Address:'+ address + '</p>' +
+                        '<p> Email:'+ email+ '<p>';
+                    }
+                </script>
+            
+        </body>
+</html>

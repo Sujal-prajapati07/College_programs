@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- Create an XML document Email where it contains the following data :
+Email (from , to ,content ( person , exercises(exercise (topic ,
+description) ) , course ).-->
+<Email>
+	<from>Sujal</from>
+	<to>Kirtan</to>
+	<content>
+		<person>Purav</person>
+		<exercises>
+			<exercise>
+				<topic>Programming</topic>
+				<description>C++</description>
+			</exercise>
+		</exercises>
+		<course>IMSCIT</course>
+	</content>
+</Email>

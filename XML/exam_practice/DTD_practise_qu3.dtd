@@ -1,0 +1,28 @@
+<!ENTITY % employee_info "IGNORE">
+<![%employee_info;[
+	<!ELEMENT Personal_info (Address,Birthdate,Gender,Mobile_No)>
+]]>
+
+<!ENTITY % employee_deta "INCLUDE">
+<![%employee_deta;[
+	<!ELEMENT Salary (Net_salary,Gross_salary,HRA,DA)>
+]]>
+
+<!ELEMENT Employee (Employee_name,Personal_info,Salary,Designation)>
+<!ELEMENT Employee_name (#PCDATA)>
+<!ELEMENT Personal_info (Address,Birthdate,Gender,Mobile_No)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Birthdate (#PCDATA)>
+<!ELEMENT Gender ( Male | Female )>
+<!ELEMENT Male EMPTY>
+<!ELEMENT Female EMPTY>
+<!ELEMENT Mobile_No (#PCDATA)>
+<!ELEMENT Net_salary (#PCDATA)>
+<!ELEMENT Gross_salary (#PCDATA)>
+<!ELEMENT HRA (#PCDATA)>
+<!ELEMENT DA (#PCDATA)>
+<!ELEMENT Designation EMPTY>
+<!ATTLIST Designation Post (Manager | Technical_Consultant | Executive | HR) #FIXED "HR">
+
+
+

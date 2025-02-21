@@ -1,0 +1,54 @@
+<!-- 3. Write a JavaScript to demonstrate the Logical Operators -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <script>
+        function insert(){
+            var a=Number(prompt("Enter a number1:"));
+            document.getElementById("value_1").value=a;
+            var b=Number(prompt("Enter a number2"));
+            document.getElementById("value_2").value=b;
+        }
+        function And(){
+            var a=Number(document.getElementById("value_1").value);
+            var b=Number(document.getElementById("value_2").value);
+            var c;
+            c= (a==b)&&(b==25);
+            document.getElementById("answer").innerHTML=c;
+        }
+        function Or(){
+            var a=Number(document.getElementById("value_1").value);
+            var b=Number(document.getElementById("value_2").value);
+            var c;
+            c= (a==b)||(b==27);
+            document.getElementById("answer").innerHTML=c;
+        }
+        function Not(){
+            var a=Number(document.getElementById("value_1").value);
+            var b=Number(document.getElementById("value_2").value);
+            var c;
+            c= (a==b)!=(b==5);
+            document.getElementById("answer").innerHTML=c;
+        }
+    </script>
+    <h3>Enter the number:</h3>
+    <input type="text" id="value_1" disabled><br><br>
+    <input type="text" id="value_2" disabled><br><br>
+    <div>
+        <button type="button" onclick="insert()">Check</button><br><br>
+    </div>
+    <b>Logical Opertaor check:</b><br><br>
+    <button type="button" onclick="And()">AND&&</button>
+    <button type="button" onclick="Or()">OR||</button>
+    <button type="button" onclick="Not()">Not!=</button>
+    <h2>Answer</h2>
+    <textarea id="answer"></textarea>
+    </center>
+</body>
+</html>

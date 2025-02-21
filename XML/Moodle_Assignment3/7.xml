@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--
+Create an XML document template to capture information aboutIteams where
+it contains the following data:
+Name, Category (veg , nonveg), company Info (Phone no, Address).
+Capture this information in an XML format.
+Write a schema that defines that veg value should be restricted by the following values only (Chips, Biscuits,
+salad,Bread)
+-->
+<Template xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<name>kirtan</name>
+	<category>
+		<veg>salad</veg>
+		<nonveg>no</nonveg>
+	</category>
+	<company_info>
+		<phone>7984989067</phone>
+		<address>isanpur</address>
+	</company_info>
+</Template>

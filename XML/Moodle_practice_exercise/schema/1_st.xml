@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Employee xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Employee_name>Kirtan</Employee_name>
+	<Emp_Id>EMP001</Emp_Id>
+	<salary>250</salary>
+	<Designation>Manager</Designation>
+	<Address>Ahmedabad</Address>
+	<Zipcode>358749</Zipcode>
+	<Mobile>7485961256</Mobile>
+</Employee>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- Create an XML document Student_info where it contains the following
+data :
+Student((which_course as attribute), name, contact_no),
+Course((c_id as attribute), name), subject(name as attribute)
+Create An External DTD for the above XML document where 
+• student can be one or more times
+• c_id as id and which_course as referance id.
+• Make one entity of your choice and use in document. 
+• Make enumerated attributes of subject name as Java, xml, OS
+• Make contact_no as nmtoken-->
+<!DOCTYPE Student_info SYSTEM "prac_10.dtd">
+<Student_info>
+	<Student which_course="Designing">
+		<Name>Sujal</Name>
+		<contact_no no="78-854">8596745285</contact_no>
+	</Student>
+	<Course c_id="101">
+		<name>&course;</name>
+	</Course>
+	<Subject name="XML">XML BOOK</Subject>
+</Student_info>

@@ -1,0 +1,12 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="Employee">
+		<xsd:complexType>
+		<xsd:sequence>
+				<xsd:element name="Employee_number" type="xsd:int"></xsd:element>
+				<xsd:element name="name" type="xsd:string"></xsd:element>
+				<xsd:element name="designation" type="xsd:string"></xsd:element>
+				<xsd:element name="salary" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

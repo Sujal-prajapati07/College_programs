@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script>
+            function add(){
+                var a,b,c;
+                a=parseInt(entry.num1.value);
+                b=parseInt(entry.num2.value);
+                c=a+b
+                entry.sum.value=c
+            }
+
+            function sub(){
+                var a,b,c;
+                a=parseInt(entry.num1.value);
+                b=parseInt(entry.num2.value);
+                c=a-b
+                entry.sum.value=c
+            }
+
+            function mul(){
+                var a,b,c;
+                a=parseInt(entry.num1.value);
+                b=parseInt(entry.num2.value);
+                c=a*b
+                entry.sum.value=c
+            }
+
+            function div(){
+                var a,b,c;
+                a=parseInt(entry.num1.value);
+                b=parseInt(entry.num2.value);
+                c=a/b
+                entry.sum.value=c
+            }
+        </script>
+    </head>
+    <body>
+        <form name="entry">
+            <p>Enter Number1:- <input type="text" name="num1"></p>
+            <p>Enter Number2:- <input type="text" name="num2"></p>
+            <p>Show Result:- <input type="text" name="sum"></p>
+
+            <p><input type="button" value="Addition(+)" onclick="add()"></p>
+            <p><input type="button" value="Substraction(-)" onclick="sub()"></p>
+            <p><input type="button" value="Multiplaction(*)" onclick="mul()"></p>
+            <p><input type="button" value="Division(/)" onclick="div()"></p>
+        </form>
+    </body>
+</html>

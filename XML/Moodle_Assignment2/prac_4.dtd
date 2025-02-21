@@ -1,0 +1,27 @@
+<!--Create XML document for Student where it contains the following 
+data:
+Student Name, Personal Info (Address, Birthdate,Gender, Mobile
+No, Address) ,Result(Total, Percentage, Grade)
+Create External DTD declaration for Student where 
+• Gender has only two choices Male and Female as an element.
+• Grade element should have only one of these grade element 
+(Pass, First, Dist., Second, Fail)-->
+<!ELEMENT Student (Student_Name,Personal_info,Result)>
+<!ELEMENT Student_Name (#PCDATA)>
+<!ELEMENT Personal_info (Address, Birthdate,Gender, MobileNo)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Birthdate (#PCDATA)>
+<!ELEMENT Gender ( MALE | FEMALE )>
+<!ELEMENT MALE (#PCDATA)>
+<!ELEMENT FEMALE (#PCDATA)>
+<!ELEMENT MobileNo (#PCDATA)>
+<!ELEMENT Result (Total,Percentage,Grade)>
+<!ELEMENT Total (#PCDATA)>
+<!ELEMENT Percentage (#PCDATA)>
+<!ELEMENT Grade ( Pass | First | Dist | Second | Fail)>
+<!ELEMENT Pass (#PCDATA)>
+<!ELEMENT First (#PCDATA)>
+<!ELEMENT Dist (#PCDATA)>
+<!ELEMENT Second (#PCDATA)>
+<!ELEMENT Fail (#PCDATA)>
+

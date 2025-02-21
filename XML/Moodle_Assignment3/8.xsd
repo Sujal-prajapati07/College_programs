@@ -1,0 +1,19 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="Vender">
+		<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string"></xsd:element>
+			<xsd:element name="personal_info">
+				<xsd:complexType>
+				<xsd:sequence>
+						<xsd:element name="address" type="xsd:string"></xsd:element>
+						<xsd:element name="birthdate" type="xsd:string"></xsd:element>
+						<xsd:element name="gender" type="xsd:string"></xsd:element>
+						<xsd:element name="pincode" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .width2{
+            width:500px;
+            margin-top: 10px;
+            height: 30px;
+            font-size: large;
+            margin-left: 60px;
+        }
+        form{
+            margin-top: 50px;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <fieldset style="height: 560px; width: 810px; background-color:rgb(128, 18, 18)">
+            <fieldset style="height: 510px; width: 660px; background-color: rgb(82, 17, 17); color: white; margin-top: 15px;">
+        <form>
+            Name : <input type="text" id="name" placeholder="Your name"><br><br>
+            Email : <input type="text" id="email" placeholder="Your Email"><br><br>
+            Password : <input type="Password" id="pass"><br><br>
+            Phone Number : <input type="text" id="phone"><br><br>
+            Gender : <input type="radio" name="gender" value = "Male" id = "M">Male
+            <input type="radio" name="gender" value = "Female" id = "F">Female
+            <input type="radio" name="gender" value = "Other" id = "O">Other <br><br>
+            Language : <select id = "selectid">
+                            <option value=""> Select language </option>
+                            <option value="C">C</option>
+                            <option value="C++">C++</option>
+                            <option value="C#">C#</option>
+                            <option value="JAVA">JAVA</option>
+                            <option value="PYTHON">PYTHON</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="JAVASCRIPT">JAVASCRIPT</option>
+                        </select><br><br>
+            Zipcode : <input type="text" id="zipcode"><br><br>
+            About : <textarea rows = "3" cols = "30" placeholder="Write about yourself...."></textarea><br><br>
+            <input type="Button" name="Register" value = "Register" width="200" onclick = "validate()" class="width2"><br><br>
+        </form>
+         <div id = "A"></div>
+        <div id = "X"></div>
+        <div id = "B"></div>
+        <div id = "C"></div>
+         <div id = "p1"></div>
+           
+        </fieldset>
+    </fieldset>
+    </center>
+</body>
+<script type="text/javascript">
+    function validate()
+    {
+        var a = document.getElementById("name").value;
+        var x = document.getElementById("email").value;
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+        var b = document.getElementById("pass").value;
+        var c = document.getElementById("phone").value;
+        var selecttag = document.getElementById("selectid");
+        var seloption = selecttag.options[selecttag.selectedIndex].value;
+        var zip = document.getElementById("zipcode").value;
+
+        if(a=="" && x=="")
+        {
+            alert("All the fields are compulsory");
+            return false;
+        }
+        if(a===""||(!isNaN(a))||a.length!==6)
+        {
+            alert("Name should be 6 alphabets only,it can not br Number or null");
+            return false;
+        }
+        if(atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+        {
+            alert("not valid e-mail address");
+            return false;
+        }
+        if(b===""||b.length!==10)
+        {
+            alert("Password should be 10 Character and not be null");
+            return false;
+        }
+        if(c === ""|| c.length!==10||isNaN(c))
+        {
+            alert("Phone NO should be 10 digit only and cannot br null");
+            return false;
+        }
+        if(!document.getElementById("M").checked &&
+        !document.getElementById("F").checked && !
+        document.getElementById("O").checked)
+        {
+            alert("Choose One Gender");
+            return false;
+        }
+        if (seloption==="")
+        {
+            alert("Select a Language");
+            return false;
+        }
+        else if(zip==""||isNaN(zip)||zip.length!=6)
+        {
+            alert("Please Provide a Zip in the format ######");		
+            return false;
+        }
+        else
+        {
+            var details = "Name: " + a + "\nEmail: " + x + "\nPassword: " + b + "\nPhone: " + c + "\nZipcode: " + zip + "\nLanguage: " + seloption;
+        alert("Form registered successfully!\n\n" + details);
+        return true;
+        }
+    }
+</script>
+</html>

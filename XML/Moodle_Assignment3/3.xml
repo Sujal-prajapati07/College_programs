@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--Create XML document for Student where it contains the following
+data:
+Student Name, Personal Info (Address, Birthdate,
+Gender, Mobile No, Address) , Result(Total, Percentage,
+Grade) Capture this information in an XML format.
+Write a schema that defines that size of Mobile No
+should not be greater than 10-->
+<student>
+	<student_name>Sujal</student_name>
+	<personal_info>
+		<Address>Ahmedabad</Address>
+		<Birthdate>5/10/2005</Birthdate>
+		<Gender>Male</Gender>
+		<Mobile_no>5263418590</Mobile_no>
+	</personal_info>
+	<Result>
+		<Total>525</Total>
+		<percentage>80</percentage>
+		<Grade>A</Grade>
+	</Result>
+</student>

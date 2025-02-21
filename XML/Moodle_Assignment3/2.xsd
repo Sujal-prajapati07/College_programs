@@ -1,0 +1,32 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="lunch">
+	<xsd:complexType>
+	<xsd:sequence>
+		<xsd:element name="starter">
+			<xsd:complexType>
+			<xsd:choice>
+				<xsd:element name="juicer" type="xsd:string"></xsd:element>
+				<xsd:element name="soup" type="xsd:string"></xsd:element>
+			</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+		<xsd:element name="main_course">
+			<xsd:complexType>
+			<xsd:choice>
+				<xsd:element name="veg_lunch" type="xsd:string"></xsd:element>
+				<xsd:element name="non_veg_luch" type="xsd:string"></xsd:element>
+			</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+		<xsd:element name="Desert">
+			<xsd:complexType>
+			<xsd:choice>
+				<xsd:element name="ice_cream" type="xsd:string"></xsd:element>
+				<xsd:element name="Fruit_Salad" type="xsd:string"></xsd:element>
+			</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+</xsd:schema>

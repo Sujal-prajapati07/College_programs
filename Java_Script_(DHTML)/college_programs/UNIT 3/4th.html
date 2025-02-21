@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .width{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    FirstName* : <input type="text" class="width" id="firstName">
+    <br><br>
+    LastName* : <input type="text" class="width" id="lastName">
+    <br><br>
+    Gender* : <input type="radio" name="gender" value="Male">Male <input type="radio" id="gender" name="gender" value="Female">Female<br>
+   
+    <br><br>
+    Hobbies* : <input type="checkbox" name="check" value="Cricket">Cricket
+               <input type="checkbox" name="check" value="Singing">Singing
+               <input type="checkbox" name="check" value="Dancing">dancing
+
+    <br><br>
+
+    Country : <select id="select">
+        <option value="">Select Country</option>
+        <option value="IN">India</option>
+        <option value="USA">America</option>
+        <option value="aus">Australia</option>
+        <option value="CN">Canada</option>
+    </select>
+    <br><br>
+
+    <input type="button" value="Validate Fields" onclick="validate()">
+
+    <p id="disFirstName"></p>
+    <p id="disLastName"></p>
+    <p id="disGender"></p>
+    <p id="disHobbies"></p>
+    <p id="disCountry"></p>
+
+
+</body>
+    <script>
+
+        function checkBoxCheck()
+        {
+            let checkboxs=document.getElementsByName("check");
+            for (let i = 0; i < checkboxs.length; i++) {
+               if ( checkboxs[i].checked == true )
+               return true;
+            }
+            return false;
+        }
+
+        function getCheckBoxValue()
+        {
+            let checkBoxValue="";
+            let checkboxs=document.getElementsByName("check");
+            for (let i = 0; i < checkboxs.length; i++) {
+               
+               if (checkboxs[i].checked == true )
+                {
+                    checkBoxValue+=checkboxs[i].value+" ";
+                }
+               
+            }
+            return checkBoxValue;
+        }
+
+        function display(){
+            let firstName=document.getElementById("firstName").value;
+            let lastName=document.getElementById("lastName").value;
+            let gender=getRadiobtnValue();
+            let hobbies=getCheckBoxValue();
+            let countryTag=document.getElementById("select");
+            let country=countryTag.options[countryTag.selectedIndex].text;
+
+            document.getElementById("disFirstName").innerHTML="First name:"+" "+firstName;
+            document.getElementById("disLastName").innerHTML="Last name:"+" "+lastName;
+            document.getElementById("disGender").innerHTML="Gender:"+" "+gender;
+            document.getElementById("disHobbies").innerHTML="Hobbies:"+" "+hobbies;
+            document.getElementById("disCountry").innerHTML="Country:"+" "+country;
+           
+        }
+        function validate(){
+    
+            if(document.getElementById("firstName").value=="" || document.getElementById("lastName").value=="" || !checkBoxCheck() || !checkRadiobtn() || document.getElementById("select").value=="" )
+            {
+                alert("All fields are Compulsary");
+            }
+           else{
+            display();
+           }
+        }
+        function checkRadiobtn()
+        {
+            let genders=document.getElementsByName("gender");
+            for (let i = 0; i < genders.length; i++) {
+               if ( genders[i].checked == true )
+               return true;
+            }
+            return false;
+        }
+
+        function getRadiobtnValue()
+        {
+            let genders=document.getElementsByName("gender");
+            for (let i = 0; i < genders.length; i++) {
+               if ( genders[i].checked == true )
+               return genders[i].value;
+            }
+            return "";
+        }
+    </script>
+</html>

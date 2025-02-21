@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!--
+Create XML document and schema for vender where it contains the
+following data:
+vender Name, Personal Info (Address, Birthdate,
+Gender, Address, pincode). apture this information in an XML format.
+-->
+<Vender xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<name>kirtan</name>
+	<personal_info>
+		<address>isanpur</address>
+		<birthdate>oct 24</birthdate>
+		<gender>male</gender>
+		<pincode>3824003</pincode>
+	</personal_info>
+</Vender>

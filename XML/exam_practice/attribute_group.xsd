@@ -1,0 +1,24 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xsd:element name="employee">
+		<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="company">
+				<xsd:complexType>
+					<xsd:attributeGroup ref="cmp_details"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+			<xsd:attributeGroup ref="emp_details"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:attributeGroup name="emp_details">
+		<xsd:attribute name="emp_id" use="required" type="xsd:int"></xsd:attribute>
+		<xsd:attribute name="emp_name" use="required" type="xsd:string"></xsd:attribute>
+	</xsd:attributeGroup>
+	
+	<xsd:attributeGroup name="cmp_details">
+		<xsd:attribute name="cmp_id" use="required" type="xsd:int"></xsd:attribute>
+		<xsd:attribute name="cmp_name" use="required" type="xsd:string"></xsd:attribute> 
+	</xsd:attributeGroup>
+</xsd:schema>

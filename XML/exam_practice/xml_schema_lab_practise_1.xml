@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--Create an XML file as below:
+ EmployeeName, EmpId, Salary, Designation, Address, Zipcode, Mobile
+ Create a Schema file and put following restrictions. 
+• EmpId must start with EMP like EMP001
+ • Address may occur maximum 2 times
+ • Zipcode must be numeric and 6 digtis
+ • Mobile must be numeric and 10 digits-->
+ <Employee>
+	<EmployeeName>Sujal</EmployeeName>
+	<EmpId>EMP001</EmpId>
+	<Salary>52000</Salary>
+	<Designation>HR</Designation>
+	<Address>Ahmedabad</Address>
+	<Address>Surat</Address>
+	<Zipcode>528595</Zipcode>
+	<Mobile>7485965574</Mobile>
+</Employee>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--Create a well-formed XML document containing details of a car like: id, company 
+name, year, model, engine and mileage.
+ Create An External DTD for the above XML document where :
+ • ID element can come only once.
+ • Year attribute must appear in the element.
+ • Company element should appear zero or more times-->
+ <!DOCTYPE car_model SYSTEM "DTD_practise_qu1.dtd">
+ <car_model>
+	<id>202</id>
+	<company_name>BMW</company_name>
+	<year year="2008">2005</year>
+	<model>BMW528</model>
+	<engine>best</engine>
+	<mileage>630</mileage>
+</car_model>

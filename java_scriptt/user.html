@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        p{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function add(){
+                var a,b,c
+                a=parseInt(entry.num1.value)
+                b=parseInt(entry.num2.value)
+                c=a+b
+            entry.sum.value=c
+                }
+        function sub(){
+                var a,b,c
+                a=parseInt(entry.num1.value)
+                b=parseInt(entry.num2.value)
+                c=a-b
+            entry.sum.value=c
+                }
+        function mul(){
+                var a,b,c
+                a=parseInt(entry.num1.value)
+                b=parseInt(entry.num2.value)
+                c=a*b
+                entry.sum.value=c
+                }
+        
+        function div(){
+                var a,b,c
+                a=parseInt(entry.num1.value)
+                b=parseInt(entry.num2.value)
+                c=a/b
+                entry.sum.value=c
+                }
+    </script>
+</head>
+<body>
+    <form name="entry">
+    <p>Enter Number1:-<input type="text" name="num1" > </p>
+    <p>Enter Number2:-<input type="text" name="num2" > </p>
+    <p>Show Result:-<input type="text" name="sum" > </p>
+
+    <p><input type="button" value="Addition(+)" onclick="add()"></p>
+    <p><input type="button" value="Subtraction(-)" onclick="sub()"></p>
+    <p><input type="button" value="Multiflication(*)" onclick="mul()"></p>
+    <p><input type="button" value="Division(/)" onclick="div()"></p>
+</form>
+</body>
+</html>

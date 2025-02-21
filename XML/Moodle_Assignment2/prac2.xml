@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--Create an XML document email where it contain the following data:
+Email(message) as an element and Message(from, to, subject)as 
+an attribute.
+Create a DTD for the following XML document.-->
+<!DOCTYPE Email [
+	<!ELEMENT Email (Message)>
+	<!ELEMENT Message (#PCDATA)>
+	<!ATTLIST Message from CDATA #REQUIRED>
+	<!ATTLIST Message to CDATA #REQUIRED>
+	<!ATTLIST Message subject CDATA #REQUIRED>
+	]>
+<Email>
+	<Message from="sujal"  to="kirtan" subject="study">Hello</Message>
+</Email>

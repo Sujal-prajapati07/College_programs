@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--Write a an XML document and corresponding XML schema for
+maintaing the studeent firstname, lastname, address, percentage,
+current year.-->
+<student xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<firstname>sujal</firstname>
+	<lastname>prajapati</lastname>
+	<address>Ahmedabad</address>
+	<percentage>80</percentage>
+	<currentyear>2024</currentyear>
+</student>

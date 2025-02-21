@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--Create an XML document Books where it contains the following data :
+Books (book (title) as an attribute , author , year , publisher ). 
+Create An External DTD for the above XML document where 
+• Elements should be in sequense.
+• Attribute title should have only two values i.e XML or DCN-->
+<!DOCTYPE Books SYSTEM "ch2_5.dtd">
+<Books>
+	<book title="XML">Ritchie</book>
+	<author>kirtan</author>
+	<year>2024</year>
+	<publisher>sujal</publisher>
+</Books>

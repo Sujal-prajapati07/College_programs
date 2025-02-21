@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--Create an XML document Student where it contains the following
+data :
+ Student (Roll_no , Name , Marks , Rank)
+Create An External DTD for the above XML document where 
+• Marks element has web technologies , XML , J2EE ,NS as a sub element
+• Marks can have only the above elements.-->
+<!DOCTYPE Student SYSTEM "prac_8.dtd">
+<Student>
+	<Roll_no>81</Roll_no>
+	<Name>Sujal</Name>
+	<Marks>
+		<web_technologies>HTML Book</web_technologies>
+		<XML>XML Book</XML>
+		<J2EE>JAVA</J2EE>
+		<NS>FOS</NS>
+	</Marks>
+	<Rank>first</Rank>
+</Student>

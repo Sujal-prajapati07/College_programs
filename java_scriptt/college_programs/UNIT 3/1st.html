@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="change" onchange="display(this)">
+        <option>Select Field</option>
+        <option>MBA</option>
+        <option>BSC</option>
+        <option>BCA</option>
+        <option>MSC</option>
+        <option>LLB</option>
+    </select>
+    <p id="show"></p>
+    <script>
+        function display(e){
+            let a=e.id;
+            document.getElementById("show").innerHTML="Your field is:"+document.getElementById(a).value;
+        }
+    </script>
+</body>
+</html>

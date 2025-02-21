@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>function copy(){
+            var name=document.getElementById("name").value;
+            var lname=document.getElementById("lname").value;
+            var number=document.getElementById("number").value;
+            var address=document.getElementById("add").value;
+            var email=document.getElementById("mail").value;
+            var button=document.getElementById("button").value;
+
+
+            document.write(name+"<br>");
+            document.write(lname+"<br>");
+            document.write(number+"<br>");
+            document.write(add+"<br>");
+            document.write(mail+"<br>");
+            document.write(button+"<br>");
+        }
+        </script>
+    </head>
+    <body>
+      <form onsubmit="b">
+            <h1><center>Student Registration Form</center></h1>
+            
+            <p id="name">First Name</p>
+            <input type="text">
+            <p id="lname">Last Name</p>
+            <input type="text">
+            <p id="number">Phone number</p>
+            <input type="number">
+            <p id="add">Address</p>
+            <textarea></textarea>
+            <p id="mail">Email</p>
+            <input type="email"><br><br>
+            <button type="submit">Submit</button>
+           
+   </form>
+    </body>
+</html>

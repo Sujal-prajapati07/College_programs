@@ -1,0 +1,15 @@
+<!--Create an XML document Student where it contains the following
+data :
+ Student (Roll_no , Name , Marks , Rank)
+Create An External DTD for the above XML document where 
+• Marks element has web technologies , XML , J2EE ,NS as a sub element
+• Marks can have only the above elements.-->
+<!ELEMENT Student (Roll_no , Name , Marks , Rank)>
+<!ELEMENT Marks (web_technologies , XML , J2EE ,NS)>
+<!ELEMENT Roll_no (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT web_technologies (#PCDATA)>
+<!ELEMENT XML (#PCDATA)>
+<!ELEMENT J2EE (#PCDATA)>
+<!ELEMENT NS (#PCDATA)>
+<!ELEMENT Rank (#PCDATA)>

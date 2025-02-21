@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<!--
+Write an XML document and corresponding XML schema for
+maintaining the employee number, name, designation, and salary.	
+-->
+<Employee xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Employee_number>131</Employee_number>
+	<name>kirtan</name>
+	<designation>It dep</designation>
+	<salary>150000</salary>
+</Employee>

@@ -1,0 +1,74 @@
+<!-- 2. Write a JavaScript to demonstrate the Arithmetic Operators. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script>
+        function add(){
+            var a,b,c;
+            a=Number(entry.num1.value);
+            b=Number(entry.num2.value);
+            c=a+b;
+            entry.sum.value=c
+        }
+        function sub(){
+            var a,b,c;
+            a=Number(entry.num1.value);
+            b=Number(entry.num2.value);
+            c=a-b;
+            entry.sum.value=c
+        }
+        function mul(){
+            var a,b,c;
+            a=Number(entry.num1.value);
+            b=Number(entry.num2.value);
+            c=a*b;
+            entry.sum.value=c
+        }
+        function div(){
+            var a,b,c;
+            a=Number(entry.num1.value);
+            b=Number(entry.num2.value);
+            c=a/b;
+            entry.sum.value=c
+        }
+        function mod(){
+            var a,b,c;
+            a=Number(entry.num1.value);
+            b=Number(entry.num2.value);
+            c=a%b;
+            entry.sum.value=c
+        }
+        function inc(){
+            var a,b,c;
+            a=Number(entry.num1.value);
+            b=Number(entry.num2.value);
+            c=a+b;
+            c++;
+            entry.sum.value=c
+        }
+        function dec(){
+            var a,b,c;
+            a=Number(entry.num1.value);
+            b=Number(entry.num2.value);
+            c=a*b;
+            c--;
+            entry.sum.value=c
+        }
+   </script>
+</head>
+<body>
+    <form name="entry">
+    <p>Enter num1:<input type="text" id="num1"></p>
+    <p>Enter num2:<input type="text" id="num2"></p>
+    <p>Show result:<input type="text" name="sum"></p>   
+    
+    <p><input type="button" value="Addition(+)" onclick="add()"></p>
+    <p><input type="button" value="Substraction(-)" onclick="sub()"></p>
+    <p><input type="button" value="Multiplication(*)" onclick="mul()"></p>
+    <p><input type="button" value="Division(/)" onclick="div()"></p>
+    <p><input type="button" value="modulo(/)" onclick="mod()"></p>
+    <p><input type="button" value="increment(++)" onclick="inc()"></p>
+    <p><input type="button" value="Decrement(/)" onclick="dec()"></p>
+    </form>
+</body>
+</html>

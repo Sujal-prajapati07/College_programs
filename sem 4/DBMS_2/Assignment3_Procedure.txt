@@ -1,0 +1,332 @@
+<---------------------------------------------------(Qu-1)------------------------------------------------>
+create or replace Procedure s4(a int,b int,c int)
+is
+begin
+if(a>b and a>c)
+then
+dbms_output.put_line('A is bigger');
+else if(b>a and b>c)
+then
+dbms_output.put_line('B is bigger');
+else
+dbms_output.put_line('C is bigger');
+end if;
+end if;
+end;
+/
+
+declare
+a int:=&a;
+b int:=&b;
+c int:=&c;
+begin
+s4(a,b,c);
+end;
+/
+
+<---------------------------------------------------(Qu-2)------------------------------------------------>
+create or replace procedure s4(n int)
+is
+begin
+dbms_output.put_line('Square of number is : '||n*n);
+dbms_output.put_line('Cube of number is : '||n*n*n);
+end;
+/
+
+declare
+n int:=&n;
+begin
+s4(n);
+end;
+/
+
+<---------------------------------------------------(Qu-3)------------------------------------------------>
+create or replace procedure s3
+	As
+	begin
+	dbms_output.put_line('Hello');
+	end;
+	/
+
+execute s3();
+
+create table employeeB193(emp_id int,emp_name varchar(100));
+
+begin
+insert into employeeB193 values(1,'Kirtan');
+insert into employeeB193 values(2,'Sujal');
+insert into employeeB193 values(3,'Vaibhav');	
+end;
+/
+
+declare
+e_id int;
+e_name varchar(100);
+begin
+select emp_id,emp_name into e_id,e_name from employeeB193 where emp_id=2;
+dbms_output.put_line(e_id);
+dbms_output.put_line(e_name);
+end;
+/
+
+<---------------------------------------------------(Qu-4)------------------------------------------------>
+create table EmployeB193(
+eid int,
+ename varchar(100),
+esalary double precision
+);
+
+begin
+insert into EmployeB193 (eid,ename,esalary) values (1,'Sujal',25000);
+insert into EmployeB193 (eid,ename,esalary) values (2,'Kirtan',20000);
+insert into EmployeB193 (eid,ename,esalary) values (3,'Purav',10000);
+end;
+/
+
+create or replace Procedure InsertData(userID IN EmployeB193.eid%TYPE)
+is
+e_id EmployeB193.eid%TYPE;
+e_name EmployeB193.ename%TYPE;
+e_salary EmployeB193.esalary%TYPE;
+begin
+select eid,ename,esalary into e_id,e_name,e_salary from EmployeB193 where eid=userID;
+dbms_output.put_line('Employee id is : '||e_id);
+dbms_output.put_line('Employee Name is : '||e_name);
+dbms_output.put_line('Employee salary is : '||e_salary);
+end;
+/
+
+exec InsertData(1);
+
+<---------------------------------------------------(Qu-5)------------------------------------------------>
+create table EmployeB193(
+eid int,
+ename varchar(100),
+esalary double precision
+);
+begin
+insert into EmployeB193 (eid,ename,esalary) values (1,'Sujal',25000);
+insert into EmployeB193 (eid,ename,esalary) values (2,'Kirtan',20000);
+insert into EmployeB193 (eid,ename,esalary) values (3,'Dinesh',30000);
+end;
+/
+
+create or replace Procedure update_salary(
+userID IN EmployeB193.eid%TYPE,
+update_salary IN EmployeB193.esalary%TYPE
+)
+is
+e_id EmployeB193.eid%TYPE;
+e_name EmployeB193.ename%TYPE;
+e_salary EmployeB193.esalary%TYPE;
+begin
+select eid,ename,esalary into e_id,e_name,e_salary from EmployeB193 where eid=userID;
+dbms_output.put_line('Employee id is : '||e_id);
+dbms_output.put_line('Employee Name is : '||e_name);
+dbms_output.put_line('Employee salary is : '||e_salary);
+
+update EmployeB193 set esalary=update_salary where eid=userID;
+dbms_output.put_line('Employee update salary is : '||update_salary);
+end ;
+/
+
+exec update_salary(3,50000);
+
+
+<---------------------------------------------------(Qu-6)------------------------------------------------>
+create table ProductB193(
+pid int,
+pname varchar(100),
+pprice double precision
+);
+begin
+insert into ProductB193 (pid,pname,pprice) values (1,'Soap',250);
+insert into ProductB193 (pid,pname,pprice) values (2,'Face Wash',300);
+insert into ProductB193 (pid,pname,pprice) values (3,'Face moisturiser',200);
+insert into ProductB193 (pid,pname,pprice) values (4,'Shampoo',400);
+insert into ProductB193 (pid,pname,pprice) values (5,'Toner',400);
+end;
+/
+
+create or replace Procedure delete_record
+is
+p_id ProductB193.pid%TYPE;
+p_name ProductB193.pname%TYPE;
+p_price ProductB193.pprice%TYPE;
+begin
+select pid,pname,pprice into p_id,p_name,p_price from ProductB193 where pprice=200;
+dbms_output.put_line('Employee id is : '||p_id);
+dbms_output.put_line('Employee Name is : '||p_name);
+dbms_output.put_line('Employee salary is : '||p_price);
+
+delete from ProductB193 where pprice=200;
+end;
+/
+
+exec delete_record;
+
+<----if you want delete data don't display then you can do this code---->
+
+create table ProductB193(
+pid int,
+pname varchar(100),
+pprice double precision
+);
+begin
+insert into ProductB193 (pid,pname,pprice) values (1,'Soap',250);
+insert into ProductB193 (pid,pname,pprice) values (2,'Face Wash',300);
+insert into ProductB193 (pid,pname,pprice) values (3,'Face moisturiser',200);
+insert into ProductB193 (pid,pname,pprice) values (4,'Shampoo',400);
+insert into ProductB193 (pid,pname,pprice) values (5,'Toner',400);
+end;
+/
+
+create or replace Procedure delete_record
+is
+p_id ProductB193.pid%TYPE;
+p_name ProductB193.pname%TYPE;
+p_price ProductB193.pprice%TYPE;
+begin
+select pid,pname,pprice into p_id,p_name,p_price from ProductB193 where pprice=200;
+dbms_output.put_line('Employee id is : '||p_id);
+dbms_output.put_line('Employee Name is : '||p_name);
+dbms_output.put_line('Employee salary is : '||p_price);
+
+delete from ProductB193 where pprice=200;
+
+for i in (select pid,pname,pprice from ProductB193)
+loop
+dbms_output.put_line('Pid : '||i.pid);
+dbms_output.put_line('Pname : '||i.pname);
+dbms_output.put_line('Pprice : '||i.pprice);
+dbms_output.put_line('--------------------------------');
+end loop;
+end;
+/
+
+exec delete_record;
+
+
+<---------------------------------------------------(Qu-7)------------------------------------------------>
+create or replace procedure arithmetic_operation(
+num1 number,
+num2 number,
+num3 number default null
+)
+is
+Addition number;
+substraction number;
+multiplication number;
+division number;
+
+begin
+if num3 is not null
+then
+Addition:=num1+num2+num3;
+substraction:=num1-num2-num3;
+multiplication:=num1*num2*num3;
+division:=num1/num2/num3;
+else
+Addition:=num1+num2;
+substraction:=num1-num2;
+multiplication:=num1*num2;
+division:=num1/num2;
+end if;
+dbms_output.put_line('Addition of value is : '||Addition);
+dbms_output.put_line('Substraction of value is : '||substraction);
+dbms_output.put_line('Multiplication of value is : '||multiplication);
+dbms_output.put_line('Division of value is : '||division);
+end;
+/
+
+exec arithmetic_operation(5,6,7);
+--exec arithmetic_operation(5,6);
+
+
+<---------------------------------------------------(Qu-8)------------------------------------------------>
+create table CustomerB193(
+cid number primary key,
+cname varchar2(30),
+ccity varchar2(30),
+cmobile varchar2(20)
+);
+
+begin
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (1,'Sujal','Ahmedabad','8596741525');
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (2,'Kirtan','Surat','7496368515');
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (3,'Purav','Rajkot','9675842386');
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (4,'Nihir','vadodra','3685749542');
+end;
+/
+
+
+create or replace procedure insert_row(
+new_customerID in number,
+new_customerName in varchar2,
+new_customerCity in varchar2,
+new_customerMobile in varchar2
+)
+as
+begin
+insert into CustomerB193 (cid,cname,ccity,cmobile) values (new_customerID,new_customerName,new_customerCity,new_customerMobile);
+end;
+/
+
+exec insert_row(5,'Manan','Amreli','8574965236');
+
+select * from CustomerB193;
+
+
+<---------------------------------------------------(Qu-9)------------------------------------------------>
+create or replace procedure InandOut(
+input_value in number,
+output_value out number
+)
+as
+begin
+output_value:=input_value+2;
+end;
+/
+
+declare
+inputValue number:=&input_value;
+ans number;
+begin
+InandOut(inputValue,ans);
+dbms_output.put_line('Answer is : '||ans);
+end;
+/
+
+<---------------------------------------------------(Qu-10)------------------------------------------------>
+create table EmployeeB193(
+EmpID number primary key,
+EmpName varchar2(20),
+EmpCity varchar2(20),
+EmpSalary varchar2(20)
+);
+
+begin
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1001,'Kirtan','Ahemdabad','25000');
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1002,'Sujal','Surat','20000');
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1003,'Purav','Rajkot','35000');
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1004,'Nihir','Amreli','40000');
+insert into EmployeeB193 (EmpID,EmpName,EmpCity,EmpSalary) values (1005,'Manan','vadodra','45000');
+end;
+/
+
+create or replace procedure display(eID in EmployeeB193.EmpID%TYPE)
+is
+Emp_ID EmployeeB193.EmpID%TYPE;
+Emp_Name EmployeeB193.EmpName%TYPE;
+Emp_city EmployeeB193.EmpCity%TYPE;
+Emp_salary EmployeeB193.EmpSalary%TYPE;
+begin
+select EmpID,EmpName,EmpCity,EmpSalary into Emp_ID,Emp_Name,Emp_city,Emp_salary from EmployeeB193 where EmpID=eID;
+dbms_output.put_line('Employee id is : '||Emp_id);
+dbms_output.put_line('Employee Name is : '||Emp_Name);
+dbms_output.put_line('Employee City is : '||Emp_city);
+dbms_output.put_line('Employee Salary is : '||Emp_salary);
+end;
+/
+
+exec display(1002);

@@ -1,0 +1,35 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="Template">
+		<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string"></xsd:element>
+			<xsd:element name="category">
+			<xsd:complexType>
+			<xsd:sequence>
+					<xsd:element name="veg">
+						<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Chips"></xsd:enumeration>
+							<xsd:enumeration value="Biscuits"></xsd:enumeration>
+							<xsd:enumeration value="salad"></xsd:enumeration>
+							<xsd:enumeration value="Bread"></xsd:enumeration>
+						</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="nonveg" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+			</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="company_info">
+				<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="phone" type="xsd:double"></xsd:element>
+					<xsd:element name="address" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		</xsd:complexType>
+		
+	</xsd:element>
+</xsd:schema>

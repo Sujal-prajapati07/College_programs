@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--Create an XML document Student where it contains the following data
+Student(Name (fname & Lname) , ID , Plan (courses) ). In
+courses element take (year) as an attribute and (course) as an
+sub-element . And Course has name , shortName , record as its
+sub element. And again record has its sub element Grade , date.
+Create An External DTD for the above XML document where :
+• Courses element can zero or more course.
+• Year attribute must appear in the element.
+• Record element should appear zero or more times.-->
+<!DOCTYPE Student SYSTEM "prac_6.dtd">
+<Student>
+	<Name>
+		<fname>Sujal</fname>
+		<Lname>Prajapati</Lname>
+	</Name>
+	<ID>520</ID>
+	<Plan>
+		<courses year="2024">
+			<course>
+				<courseName>IMSCIT</courseName>
+				<shortName>IT</shortName>
+				<record>
+					<grade>A</grade>
+					<date>5/6/2024</date>
+				</record>
+			</course>
+		</courses>
+	</Plan>
+</Student>

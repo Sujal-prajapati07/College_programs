@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script>
+            function add(){
+                var a=5,b=10;
+                document.write("value of a is"+a + "<br/>");
+                document.write("value of b is"+b + "<br/>");
+                document.write("The Addition is"+(a+b) + "<br/>");
+                document.getElementById("demo1").innerHTML="";
+            }
+            function sub(){
+                var a=10,b=20;
+                document.write("value of a is"+a + "<br/>");
+                document.write("value of b is"+b + "<br/>");
+                document.write("The Substraction is"+(a-b) +"<br/>");
+                document.getElementById("demo2").innerHTML="";
+            }
+            function mul(){
+                var a=25,b=5;
+                document.write("value of a is"+a + "<br/>");
+                document.write("value of b is"+b + "<br/>");
+                document.write("The multiplaction is"+(a*b) + "<br/>");
+                document.getElementById("demo3").innerHTML="";
+            }
+            function div(){
+                var a=30,b=10;
+                document.write("value of a is"+a + "<br/>");
+                document.write("value of b is"+b + "<br/>");
+                document.write("The Division is"+(a/b) + "<br/>");
+                document.getElementById("demo4").innerHTML="";
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <h1>Arithmetic Operators</h1>
+
+        <p id="demo1"><input type="button" value="ADDITION" onclick="add()"></p>
+        <p id="demo2"><input type="button" value="SUBSTRACTION" onclick="sub()"></p>
+        <p id="demo3"><input type="button" value="MULTIPLICATION" onclick="mul()"> </p>
+        <p id="demo4"><input type="button" value="DIVISION" onclick="div()"></p>
+        
+    </body>
+
+</html>

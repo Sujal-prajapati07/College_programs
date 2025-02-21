@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--Write an XSLT file mentioned which would:
+1. Display a heading Emp_name, followed by the employee's name.
+2. Display the employee number below this, in a smaller font.
+XML file should include, emp_info(employee(emp_name: empID as
+an attribute), firstname and lastname))-->
+<Emp_info>
+	<employee EmpId="101">
+		<first_name>Sujal</first_name>
+		<last_name>Prajapati</last_name>
+	</employee>
+	<employee EmpId="102">
+		<first_name>Kirtan</first_name>
+		<last_name>Dholakiya</last_name>
+	</employee>
+</Emp_info>

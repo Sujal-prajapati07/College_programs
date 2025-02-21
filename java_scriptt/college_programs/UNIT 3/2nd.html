@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .width{
+            width: 950px;
+        }
+    </style>
+</head>
+<body>
+    <h2>SUBSCRIBE TO OUR MAILING LIST</h2>
+    Email Address<br><input type="text" class="width" id="p1">
+    <br><br>
+    First Name<br><input type="text" class="width" id="p2">
+    <br><br>
+    Last Name<br><input type="text" class="width" id="p3">
+    <br><br>
+
+    <input type="button" value="Subscribe" onclick="display()">
+
+    <p id="k1"></p>
+
+    <script>
+        function display(){
+            let a=document.getElementById("p1").value;
+            let b=document.getElementById("p2").value;
+            let c=document.getElementById("p3").value;
+            document.getElementById("k1").innerHTML="your Email is:="+a+"<br>Your First Name is:="+b+"<br>Your Last Name is:="+c;
+            document.getElementById("k1").style.fontWeight="bold";
+        }
+    </script>
+
+</body>
+</html>
