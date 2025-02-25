@@ -1,0 +1,53 @@
+create table Product(
+Prod_id varchar2(10) primary key,
+Prod_name varchar2(30),
+Prod_amt number,
+Prod_comp varchar2(30),
+Prod_mfgdate date, 
+Prod_expdate date
+);
+
+create table Product_new(
+Prod_id varchar2(10) primary key,
+Prod_name varchar2(30),
+Prod_amt number,
+Prod_comp varchar2(30),
+Prod_mfgdate date, 
+Prod_expdate date
+);
+
+begin
+insert into Product values('P101','Soap',200,'Himalaya',to_date('2024-02-01','YYYY-MM-DD'),to_date('2025-03-05','YYYY-MM-DD'));
+insert into Product values('P102','Jack Black',300,'Mama Earth',to_date('2025-07-05','YYYY-MM-DD'),to_date('2026-03-04','YYYY-MM-DD'));
+insert into Product values('P103','Aesop',400,'Denver',to_date('2023-05-09','YYYY-MM-DD'),to_date('2024-02-01','YYYY-MM-DD'));
+insert into Product values('P104','Perfume',600,'Black Day',to_date('2021-05-10','YYYY-MM-DD'),to_date('2022-08-15','YYYY-MM-DD'));
+insert into Product values('P105','Face Wash',700,'Garnier',to_date('2022-07-09','YYYY-MM-DD'),to_date('2024-04-20','YYYY-MM-DD'));
+end;
+/
+
+create or replace trigger delete_rec
+before delete
+on Product
+for each row
+begin
+insert into Product_new(
+Prod_id,
+Prod_name,
+Prod_amt,
+Prod_comp,
+Prod_mfgdate,
+Prod_expdate
+)
+values
+(
+:old.Prod_id,
+:old.Prod_name,
+:old.Prod_amt,
+:old.Prod_comp,
+:old.Prod_mfgdate,
+:old.Prod_expdate
+);
+end;
+/
+delete from Product where Prod_id='P103';
+select * from Product;
