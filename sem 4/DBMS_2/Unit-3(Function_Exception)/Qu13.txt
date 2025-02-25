@@ -1,0 +1,23 @@
+create or replace function factorial(n number)
+return number
+is
+  f number;
+begin
+if n=0
+then
+    f:=1;
+else
+    f:=n*factorial(n-1);
+end if;
+return f;
+end;
+/
+
+declare
+num number:=&num;
+ans number;
+begin
+ans:=factorial(num);
+dbms_output.put_line('Factorial is : '||ans);
+end;
+/

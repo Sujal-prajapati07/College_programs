@@ -1,0 +1,24 @@
+create or replace function func(a in out number)
+return number
+is
+rev_number number:=0;
+remainder number;
+begin
+while a!=0
+loop
+remainder:=mod(a,10);
+rev_number:=rev_number*10+remainder;
+a:=trunc(a/10);
+end loop;
+return rev_number;
+end;
+/
+
+declare
+current_number number:=&current_number;
+reverse_number number;
+begin
+reverse_number:=func(current_number);
+dbms_output.put_line('Reversed number is : '||reverse_number);
+end;
+/

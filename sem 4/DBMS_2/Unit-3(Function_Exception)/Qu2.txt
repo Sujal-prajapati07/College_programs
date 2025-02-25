@@ -1,0 +1,39 @@
+create table EmployeeB193(emp_id number,emp_name varchar2(20),emp_city varchar2(20),emp_salary number);
+
+begin
+insert into EmployeeB193 values (1,'Sujal','Ahmedabad',25000);
+insert into EmployeeB193 values (2,'Kirtan','Surat',22000);
+insert into EmployeeB193 values (3,'Purav','Rajkot',10000);
+insert into EmployeeB193 values (4,'Nihir','Vadodra',15000);
+insert into EmployeeB193 values (5,'Manan','Amreli',20000);
+end;
+/
+
+create or replace function total_employee
+return number
+is
+total number:=0;
+begin
+select count(*) into total from EmployeeB193;
+return total;
+end;
+/
+
+declare
+total_count number;
+begin
+total_count:=total_employee();
+dbms_output.put_line('Total Number of Employee is : '||total_count);
+end;
+/
+
+create table EmployeeB193(emp_id number,emp_name varchar2(20),emp_city varchar2(20),emp_salary number);
+
+begin
+insert into EmployeeB193 values (1,'Sujal','Ahmedabad',25000);
+insert into EmployeeB193 values (2,'Kirtan','Surat',22000);
+insert into EmployeeB193 values (3,'Purav','Rajkot',10000);
+insert into EmployeeB193 values (4,'Nihir','Vadodra',15000);
+insert into EmployeeB193 values (5,'Manan','Amreli',20000);
+end;
+/

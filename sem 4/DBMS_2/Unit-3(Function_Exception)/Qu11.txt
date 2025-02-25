@@ -1,0 +1,23 @@
+declare
+num1 number:=&num1;
+num2 number:=&num2;
+num3 number:=&num3;
+max_value number;
+max_val_ex Exception;
+begin
+max_value:=greatest(num1,num2,num3);
+if (num1=num2 and num2=num3 and num1=num3)
+then
+raise max_val_ex;
+end if;
+dbms_output.put_line('Max value : '||max_value);
+
+Exception
+when max_val_ex
+then
+dbms_output.put_line('All values are equal');
+when others
+then
+dbms_output.put_line('Error');
+end;
+/

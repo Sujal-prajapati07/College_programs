@@ -1,0 +1,15 @@
+declare
+a number:=&a;
+b number:=&b;
+ans number;
+begin
+ans:=a/b;
+dbms_output.put_line('Division is : '||ans);
+Exception
+when zero_divide
+then
+dbms_output.put_line('cant divide by zero');
+dbms_output.put_line(a);
+dbms_output.put_line(b);
+end;
+/

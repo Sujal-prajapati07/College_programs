@@ -1,0 +1,23 @@
+declare
+emp_salary number:=&emp_salary;
+new_salary number;
+max_salary Exception;
+begin
+if emp_salary >= 25000
+then
+raise max_salary;
+end if;
+
+new_salary:=emp_salary + (emp_salary * 0.05);
+
+dbms_output.put_line('Employee new salary is : '||new_salary);
+
+Exception
+when max_salary
+then
+dbms_output.put_line('Salary is Out of the Limit');
+when others
+then
+dbms_output.put_line('Error');
+end;
+/

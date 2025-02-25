@@ -1,0 +1,29 @@
+create table EmployeeB193(emp_id number,emp_name varchar2(20),emp_city varchar2(20),emp_salary number);
+
+begin
+insert into EmployeeB193 values (1,'Sujal','Ahmedabad',25000);
+insert into EmployeeB193 values (2,'Kirtan','Surat',22000);
+insert into EmployeeB193 values (3,'Purav','Rajkot',10000);
+insert into EmployeeB193 values (4,'Nihir','Vadodra',15000);
+insert into EmployeeB193 values (5,'Manan','Amreli',20000);
+end;
+/
+
+create or replace function total_salary
+return number
+as
+total number:=0;
+begin
+select sum(emp_salary) into total from EmployeeB193;
+return total;
+end;
+/
+
+
+declare
+totalSalary number;
+begin
+totalSalary:=total_salary();
+dbms_output.put_line('Total salary of all Employee is : '||totalSalary);
+end;
+/

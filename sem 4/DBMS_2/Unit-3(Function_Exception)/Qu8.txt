@@ -1,0 +1,24 @@
+create table CustomerB193(customer_id number,customer_name varchar2(20),Customer_city varchar2(20),Customer_number varchar2(10));
+
+begin
+insert into CustomerB193 values (1,'Sujal','Ahmedabad','8574965263');
+insert into CustomerB193 values (2,'Kirtan','Surat','7396754892');
+insert into CustomerB193 values (3,'Sujal','Rajkot','9374968536');
+insert into CustomerB193 values (4,'Nihir','Vadodra','7886957852');
+insert into CustomerB193 values (5,'Sujal','Amreli','9685753695');
+end;
+/
+
+declare
+c_name varchar2(10);
+begin
+select customer_name into c_name from CustomerB193 where customer_name='Sujal';
+dbms_output.put_line(c_name);
+Exception
+when too_many_rows
+then
+dbms_output.put_line('Error...!!Trying to select many rows');
+end;
+/
+
+select * from CustomerB193;
