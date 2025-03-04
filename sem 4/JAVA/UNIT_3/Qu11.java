@@ -1,4 +1,3 @@
-// Write a Java program to create an interface area having pie as its data members and a method compute(float, float). 
 import java.util.*;
 
 interface Area 
@@ -24,7 +23,7 @@ class Rectangle implements Area
     }
 }
 
-class main
+class Qu11
 {
     public static void main(String[] args) 
     {
