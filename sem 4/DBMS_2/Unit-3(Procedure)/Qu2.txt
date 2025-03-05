@@ -1,4 +1,4 @@
-create or replace procedure s4(n int)
+create or replace procedure s4(n in out int)
 is
 begin
 dbms_output.put_line('Square of number is : '||n*n);
