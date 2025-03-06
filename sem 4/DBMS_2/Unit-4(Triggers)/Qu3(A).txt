@@ -1,5 +1,5 @@
 create table Product(
-Prod_id number primary key,
+Prod_id varchar2(20) primary key,
 Prod_name varchar2(30),
 Prod_amt number,
 Prod_comp varchar2(30),
@@ -8,11 +8,11 @@ Prod_expdate date
 );
 
 begin
-insert into Product values(1,'Soap',200,'Himalaya',to_date('2024-02-01','YYYY-MM-DD'),to_date('2025-03-05','YYYY-MM-DD'));
-insert into Product values(2,'Jack Black',300,'Mama Earth',to_date('2025-07-05','YYYY-MM-DD'),to_date('2026-03-04','YYYY-MM-DD'));
-insert into Product values(3,'Aesop',400,'Denver',to_date('2023-05-09','YYYY-MM-DD'),to_date('2024-02-01','YYYY-MM-DD'));
-insert into Product values(4,'Perfume',600,'Black Day',to_date('2021-05-10','YYYY-MM-DD'),to_date('2022-08-15','YYYY-MM-DD'));
-insert into Product values(5,'Face Wash',700,'Garnier',to_date('2022-07-09','YYYY-MM-DD'),to_date('2024-04-20','YYYY-MM-DD'));
+insert into Product values('P100','Soap',200,'Himalaya','2024-mar-01','2025-apr-05');
+insert into Product values('P102','Jack Black',300,'Mama Earth','2025-may-05','2026-june-04');
+insert into Product values('P103','Aesop',400,'Denver','2023-feb-09','2024-mar-01');
+insert into Product values('P104','Perfume',600,'Black Day','2021-may-10','2022-june-15');
+insert into Product values('P105','Face Wash',700,'Garnier','2022-aug-09','2024-oct-20');
 end;
 /
 
