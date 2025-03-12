@@ -17,11 +17,11 @@ Prod_expdate date
 );
 
 begin
-insert into Product values('P100','Soap',200,'Himalaya','2024-mar-01','2025-apr-05');
-insert into Product values('P102','Jack Black',300,'Mama Earth','2025-may-05','2026-june-04');
-insert into Product values('P103','Aesop',400,'Denver','2023-feb-09','2024-mar-01');
-insert into Product values('P104','Perfume',600,'Black Day','2021-may-10','2022-june-15');
-insert into Product values('P105','Face Wash',700,'Garnier','2022-aug-09','2024-oct-20');
+insert into Product values('P100','Soap',200,'Himalaya','01-mar-2025','05-apr-2005');
+insert into Product values('P102','Jack Black',300,'Mama Earth','05-may-2025','04-june-2026');
+insert into Product values('P103','Aesop',400,'Denver','09-feb-2023','01-mar-2024');
+insert into Product values('P104','Perfume',600,'Black Day','10-may-2021','15-june-2022');
+insert into Product values('P105','Face Wash',700,'Garnier','09-aug-2023','20-oct-2024');
 end;
 /
 
