@@ -1,0 +1,24 @@
+create table Employee193 (emp_id int ,emp_name varchar(20),emp_salary double precision,emp_department varchar(20));
+
+begin
+insert into Employee193 values(1,'Sujal',25000,'IT');
+insert into Employee193 values(2,'Kirtan',35000,'Finanace');
+insert into Employee193 values(3,'Purav',15000,'Medical');
+insert into Employee193 values(4,'Nihir',10000,'Management');
+insert into Employee193 values(5,'Manan',20000,'Sales');
+end;
+
+declare
+emp_sal double precision;
+begin
+update Employee193 set emp_salary=emp_salary+(emp_salary*0.1);
+if sql%notfound 
+then
+dbms_output.put_line('data not found');
+elsif sql%found
+then
+select emp_salary into emp_sal from Employee193 where emp_id=1;
+dbms_output.put_line(emp_sal||' Salary updated');
+end if;
+end;
+/

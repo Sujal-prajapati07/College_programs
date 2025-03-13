@@ -1,0 +1,35 @@
+create table Employee193 (emp_id int ,emp_name varchar(20),emp_salary double precision,emp_department varchar(20),emp_did int);
+
+begin
+insert into Employee193 values(1,'Sujal',25000,'IT',101);
+insert into Employee193 values(2,'Kirtan',35000,'Finanace',102);
+insert into Employee193 values(3,'Purav',15000,'Medical',103);
+insert into Employee193 values(4,'Nihir',10000,'Management',104);
+insert into Employee193 values(5,'Manan',20000,'Sales',105);
+end;
+/
+
+declare
+empid Employee193.emp_id%type;
+empname Employee193.emp_name%type;
+empsal Employee193.emp_salary%type;
+empdepart Employee193.emp_department%type;
+empdid Employee193.emp_did%type;
+begin
+
+select emp_id,emp_name,emp_salary,emp_department,emp_did into 
+empid,empname,empsal,empdepart,empdid from Employee193 where emp_did=101;
+
+if sql%notfound 
+then
+dbms_output.put_line('data not found');
+elsif sql%found
+then
+dbms_output.put_line(empid);
+dbms_output.put_line(empname);
+dbms_output.put_line(empsal);
+dbms_output.put_line(empdepart);
+dbms_output.put_line(empdid);
+end if;
+end;
+/

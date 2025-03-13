@@ -1,0 +1,30 @@
+create table Employee193 (emp_id int ,emp_name varchar(20),emp_salary double precision,emp_department varchar(20));
+
+begin
+insert into Employee193 values(1,'Sujal',25000,'IT');
+insert into Employee193 values(2,'Kirtan',35000,'Finanace');
+insert into Employee193 values(3,'Purav',15000,'Medical');
+insert into Employee193 values(4,'Nihir',10000,'Management');
+insert into Employee193 values(5,'Manan',20000,'Sales');
+end;
+/
+
+DECLARE
+employee_id Employee193.emp_id%type;
+employee_name Employee193.emp_name%type; 
+employee_salary Employee193.emp_salary%type; 
+employee_department Employee193.emp_department%type; 
+
+cursor employee_cur is 
+select emp_id,emp_name,emp_salary,emp_department from Employee193;  
+
+begin   
+OPEN employee_cur; 
+loop 
+fetch employee_cur into employee_id,employee_name,employee_salary,employee_department; 
+exit when employee_cur%notfound; 
+dbms_output.put_line(employee_name||' '||employee_salary);
+END loop; 
+close employee_cur;
+end; 
+/

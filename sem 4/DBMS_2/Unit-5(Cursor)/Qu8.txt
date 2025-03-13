@@ -1,0 +1,25 @@
+create table Employee193 (emp_id int ,emp_name varchar(20),emp_salary double precision,emp_department varchar(20),emp_did int);
+
+begin
+insert into Employee193 values(1,'Sujal',25000,'IT',101);
+insert into Employee193 values(2,'Kirtan',35000,'Finanace',102);
+insert into Employee193 values(3,'Purav',15000,'Medical',103);
+insert into Employee193 values(4,'Nihir',10000,'Management',104);
+insert into Employee193 values(5,'Manan',20000,'Sales',105);
+end;
+/
+
+declare
+total_row number;
+begin
+update Employee193 set emp_salary=emp_salary+0;
+if sql%notfound 
+then
+dbms_output.put_line('No data found');
+elsif sql%found
+then
+total_row:=sql%rowcount;
+dbms_output.put_line('Total '||total_row||' rows in table');
+end if;
+end;
+/
