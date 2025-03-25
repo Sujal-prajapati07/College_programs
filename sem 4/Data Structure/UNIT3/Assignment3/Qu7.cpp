@@ -3,8 +3,9 @@ using namespace std;
 int stack[5];
 int n=5,top=-1;
 
-void push(int val) //stack create
+void push() //stack create
 {
+	int val;
     cout<<"Enter -1 to end"<<endl;
     cout<<"Enter value to be pushed : "<<endl;
     cin>>val;
@@ -59,6 +60,21 @@ void Display() //stackk display
     cout<<endl;
 }
 
+void maxValue()
+{
+	int max=stack[0];
+
+	for(int i=1;i<=top;i++)
+	{
+		if(stack[i]>max)
+		{
+			max=stack[i];
+		}
+	}
+
+	cout<<"Maximum value is : "<<max<<endl;
+}
+
 int main()
 {
     int ch;
@@ -68,7 +84,8 @@ int main()
         cout<<"2.Pop from stack"<<endl;
         cout<<"3.Display Stack"<<endl;
         cout<<"4.Peek"<<endl;
-        cout<<"5.Exit"<<endl;
+        cout<<"5.Max Value"<<endl;
+        cout<<"6.Exit"<<endl;
         
         cout<<"Enter the choice : "<<endl;
         cin>>ch;
@@ -76,7 +93,7 @@ int main()
         switch (ch)
         {
         case 1:
-            push(top);
+            push();
             break;
 
         case 2:
@@ -92,13 +109,17 @@ int main()
             break;
 
         case 5:
+        	maxValue();
+        	break;
+
+        case 6:
             cout<<"Exit"<<endl;
             break;
         default:
             cout<<"INVALID CHOICE"<<endl;
             break;
         }
-    }while(ch!=5);
+    }while(ch!=6);
 
     return 0;
 }

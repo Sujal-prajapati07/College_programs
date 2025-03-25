@@ -1,7 +1,9 @@
 #include<iostream>
+#define max 10
 using namespace std;
-int stack[5];
-int n=5,top=-1;
+
+int stack[10];
+int n=10,top=-1;
 
 void push(int val) //stack create
 {
@@ -24,9 +26,9 @@ void push(int val) //stack create
     }
 }
 
-void pop() //top element remove
+void pop()
 {
-    if(top<=-1)
+	if(top<=-1)
     {
         cout<<"Stack underflow"<<endl;
     }
@@ -37,19 +39,34 @@ void pop() //top element remove
     }
 }
 
-void peek() //top element display
+void display()
 {
-    cout<<"The Peek element is : "<<stack[top]<<endl;
-}
-
-void Display() //stackk display
-{
-    if(top>=0)
+	if(top>=0)
     {
-        cout<<"Stack elements are : ";
-        for(int i=top;i>=0;i--)
+        int arr[max];
+
+        //copy stack element because it takes garbage values
+        for(int i=0;i<=top;i++)
         {
-            cout<<stack[i]<<" ";
+        	arr[i]=stack[i];
+        }
+
+        //swap
+        for(int i=0;i<top;i++)
+        {
+        	for(int j=0;j<top-1;j++)
+        	{
+        		if(arr[j] > arr[j+1])
+        		{
+        			swap(arr[j],arr[j+1]);
+        		}
+        	}
+        }
+
+        //print stack element in sorted
+        for(int i=0;i<=top;i++)
+        {
+        	cout<<arr[i]<<" ";
         }
     }
     else
@@ -57,6 +74,11 @@ void Display() //stackk display
         cout<<"Stack is empty"<<endl;
     }
     cout<<endl;
+}
+
+void peek()
+{
+	cout<<stack[top]<<endl;
 }
 
 int main()
@@ -84,7 +106,7 @@ int main()
             break;
         
         case 3:
-            Display();
+            display();
             break;
 
         case 4:
@@ -94,6 +116,7 @@ int main()
         case 5:
             cout<<"Exit"<<endl;
             break;
+
         default:
             cout<<"INVALID CHOICE"<<endl;
             break;
