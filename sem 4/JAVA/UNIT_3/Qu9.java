@@ -22,8 +22,10 @@ class Qu9
         obj.s();
 
         B obj1=new B();
-
         obj1.s1();
         obj1.s();
+        
+        A obj2 = new B();
+        obj2.s();
     }
 }
