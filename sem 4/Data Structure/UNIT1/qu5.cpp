@@ -1,37 +1,43 @@
-//Write a CPP  program that will display an array in reverse order
 #include<iostream>
+
 using namespace std;
 
-class arr_reverse
-{
-    public:
-    int n;
-
-    void func()
-    {
-        cout<<"Enter the number of elements:"<<endl;
-        cin>>n;
-
-        int arr[n];
-
-        for(int i=0;i<n;i++)
-        {
-            cout<<"enter the elements:"<<endl;
-            cin>>arr[i];
-        }
-
-        cout<<"DISPLAY IN REVERSE OREDR:"<<endl;
-        for(int i=n-1;i>=0;i--)
-        {
-            cout<<arr[i]<<endl;
-        }
-    }
-};
 int main()
 {
-    arr_reverse obj;
+    int n;
 
-    obj.func();
+    cout<<"Enter the size of the array : ";
+    cin>>n;
 
-    return 0;
+    int arr[n];
+
+    cout<<"Enter the arry element : ";
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+
+    cout<<"Arry Element : "<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i];
+    }
+
+    cout<<endl;
+
+    cout<<"Reverse order : "<<endl;
+    for(int i=n-1;i>=0;i--)
+    {
+        cout<<arr[i];
+    }
+
 }
+
+//static
+// int arr[5]={1,2,3,4,5};
+
+// for(int i=5-1;i>=0;i--)
+// {
+//     cout<<arr[i];
+// }
+

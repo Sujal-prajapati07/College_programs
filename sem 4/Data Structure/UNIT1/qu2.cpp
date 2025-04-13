@@ -1,23 +1,30 @@
-//Write a CPP program to create a single dimensional array, pass that array to a user defined function and print it
-#include <iostream>
+#include<iostream>
 
 using namespace std;
 
-void displayArrayElements(int *arr, int size)
+void display(int arr[],int n)
 {
-  for (int i = 0; i < size; i++)
-  {
-    cout << "" << *arr << endl;
-    arr++;
-  }
-}
+    cout<<"Array elements : "<<endl;
 
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<"\t";
+    }
+}
 int main()
 {
-  int arr[3] = {1, 0, 0};
+    int n;
 
-  int sizeOfTheArray = sizeof(arr) / sizeof(arr[0]);
+    cout<<"Enter the size of array : ";
+    cin>>n;
 
-  displayArrayElements(arr, sizeOfTheArray);
-  return 0;
+    int arr[n];
+
+    cout<<"Enter the array elements : ";
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+
+    display(arr,n);
 }

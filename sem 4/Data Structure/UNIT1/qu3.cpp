@@ -1,51 +1,40 @@
-//Write a CPP program to create two dimensional array, pass that array to a user defined function and print it.
 #include<iostream>
+
 using namespace std;
 
-class twod_array
+void display(int arr[10][10],int r,int c)
 {
-    public:
-    void func(int **arr,int row,int col)
-    {
-        for(int i=0;i<row;i++)
-        {
-            for(int j=0;j<col;j++)
-            {
-                cout<<arr[i][j]<<" ";
-            }
-            cout<<endl;
-        }
-    }
-};
+    cout<<"Array elements : "<<endl;
 
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            cout<<arr[i][j]<<"\t";
+        }
+        cout<<endl;
+    }
+}
 int main()
 {
-    twod_array obj;
+    int r,c;
 
-    int row,col;
+    cout<<"Enter the row : ";
+    cin>>r;
 
-    cout<<"Enter the row:"<<endl;
-    cin>>row;
+    cout<<"Enter the column : ";
+    cin>>c;
 
-    cout<<"Enter the cols:"<<endl;
-    cin>>col;
+    int arr[10][10]; //maximum size of array
 
-    int **arr=new int*[row];
-    for(int i=0;i<row;i++)
+    cout<<"Enter the array elements : ";
+    for(int i=0;i<r;i++)
     {
-        arr[i]=new int[col];
+        for(int j=0;j<c;j++)
+        {
+            cin>>arr[i][j];
+        }
     }
 
-    cout << "Enter the elements of the matrix:\n"; 
-    for(int i = 0; i < row; i++) 
-    { 
-        for(int j = 0; j < col; j++) 
-        { 
-            cin >> arr[i][j]; 
-        } 
-    }
-
-    obj.func(arr,row,col);
-
-    return 0;
+    display(arr,r,c);
 }

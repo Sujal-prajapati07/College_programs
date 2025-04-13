@@ -1,48 +1,52 @@
-//Write a CPP program to create a class named Student with data : No, Name and Addresss.Create 3 objects of Student structure. Get the value of structure variable from user and print it.
 #include<iostream>
+
 using namespace std;
-class student
+
+class Student
 {
     public:
-    int num;
-    string address;
+    int no;
     string name;
+    string address;
 
-    void getdata()
+    void get()
     {
-        cout<<"Enter student no:"<<endl;
-        cin>>num;
-        cout<<"Enter the student name:"<<endl;
+        cout<<"Enter the student RollNo : "<<endl;
+        cin>>no;
+
+        cout<<"Enter the student name : "<<endl;
         cin>>name;
-        cout<<"Enter the student address:"<<endl;
+
+        cout<<"Enter the student address : "<<endl;
         cin>>address;
     }
 
-    void printdata()
+    void set()
     {
-        cout<<"Student number is : "<<num<<endl;
-        cout<<"Student name is : "<<name<<endl;
-        cout<<"Student Address is : "<<address<<endl;
+        cout<<"Student RollNo is : "<<no<<"\t";
+        cout<<"Student Name is : "<<name<<"\t";
+        cout<<"Sudent Address is : "<<address<<"\t";
     }
 };
 
 int main()
 {
-    student s1,s2,s3;
+    Student s1,s2,s3; //object create
 
     cout<<"Student 1 : "<<endl;
-    s1.getdata();
+    s1.get();
+
     cout<<"Student 2 : "<<endl;
-    s2.getdata();
+    s2.get();
+
     cout<<"Student 3 : "<<endl;
-    s3.getdata();
+    s3.get();
 
-    cout<<"--------------------------------------------"<<endl;
-    s1.printdata();
-    cout<<endl;
-    s2.printdata();
-    cout<<endl;
-    s3.printdata();
+    cout<<"-------Print all the data-------"<<endl;
 
-    return 0;
+    s1.set();
+    cout<<endl;
+    s2.set();
+    cout<<endl;
+    s3.set();
 }

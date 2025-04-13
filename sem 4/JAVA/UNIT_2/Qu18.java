@@ -30,6 +30,5 @@ class Qu18
        {
             System.out.println(check+" Element not present in queue");
        }
-
     }
 }

@@ -28,5 +28,6 @@ class Qu13
 
         System.out.println("Stack element : "+stack);
         System.out.println("Minimum element is : "+min);
+      
     }
 }
