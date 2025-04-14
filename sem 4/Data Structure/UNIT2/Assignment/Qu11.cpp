@@ -18,6 +18,8 @@ node *create(node *start)
 
     node *new_node;
 
+    cout<<"<---Enter -1 to end--->"<<endl;
+    
     cout<<"Enter the no : ";
     cin>>num;
 
