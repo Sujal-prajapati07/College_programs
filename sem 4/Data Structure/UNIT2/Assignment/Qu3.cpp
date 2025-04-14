@@ -54,10 +54,10 @@ node *insert_mid(node *start)
     int num,val;
 
     cout<<"Enter the data : ";
-    cin>>num;
+    cin>>num;//3
 
     cout<<"Enter the value after which the data hase to be inserted : ";
-    cin>>val;
+    cin>>val; // 2 
 
     new_node=new node();
     new_node->data=num;
@@ -70,6 +70,7 @@ node *insert_mid(node *start)
         preptr=ptr;
         ptr=ptr->next;
     }
+    
     new_node->next=ptr;
     preptr->next=new_node;
     return start;
@@ -85,6 +86,7 @@ node *insert_beg(node *start)
 
     new_node=new node();
     new_node->data=num;
+
     new_node->next=start;
     start=new_node;
     return start;
@@ -102,14 +104,9 @@ node *insert_end(node *start)
     new_node=new node();
     new_node->data=num;
 
-    ptr=start;
-
-    while(ptr->next!=NULL)
-    {
-        ptr=ptr->next;
-        new_node->next=NULL;
-    }
-    ptr->next=new_node;
+    rear->next=new_node;
+    new_node->next=NULL;
+    rear=new_node;
     return start;
 }
 
