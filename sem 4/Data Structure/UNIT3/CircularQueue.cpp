@@ -49,6 +49,7 @@ void dequeue()
 
         cout<<"Remove element : "<<val<<endl;
 
+       
         if(front==rear)
         {
             front=rear-1;

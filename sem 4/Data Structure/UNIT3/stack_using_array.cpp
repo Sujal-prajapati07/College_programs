@@ -10,7 +10,7 @@ void push(int val) //stack create
     cin>>val;
     while(val!=-1)
     {
-        if(top>=n-1)
+        if(top>=n-1) 
         {
             cout<<"Stack overflow"<<endl;
         }
@@ -102,3 +102,4 @@ int main()
 
     return 0;
 }
+
