@@ -1,0 +1,2 @@
+Withdrawal attempt: 5000.0, Balance: 20000.0
+Withdrawal attempt: 60000.0, Balance: 20000.0
