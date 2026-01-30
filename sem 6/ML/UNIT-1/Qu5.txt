@@ -1,0 +1,11 @@
+import re
+
+text = "<html>Hello! This is <b>clean</b> text.</html>"
+
+removeTag=re.sub(r'<.*?>','',text)
+
+removeSpecialchar=re.sub(r'[^a-zA-Z0-9\s]','',removeTag)
+
+//print only text
+print(removeSpecialchar)
+

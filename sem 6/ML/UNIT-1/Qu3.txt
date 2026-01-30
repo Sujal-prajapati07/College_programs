@@ -1,0 +1,10 @@
+import pandas as pd
+
+data = {'Date': ['2023-01-01', '01/02/2023', '2023.03.03']}
+df = pd.DataFrame(data)
+
+//correct date format
+df['Date'] = pd.to_datetime(df['Date'])
+
+//print correct date format
+print(df)

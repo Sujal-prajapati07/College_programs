@@ -1,0 +1,19 @@
+import pandas as pd
+
+data = { 'Name': ['John', 'Anna', 'Peter', 'John'],
+ 		 'Age': [24, 13, 53, 24] 
+ 	   }
+
+df=pd.DataFrame(data)
+
+//Remove (keep=first)
+print(df.drop_duplicates())
+
+//Remove (keep=last)
+print(df.drop_duplicates(keep="last"))
+
+//Remove based only on name(keep="first")
+print(df.drop_duplicates(subset=["Name"]))
+
+//Remove based only on name(keep="last")
+print(df.drop_duplicates(subset=["Name"],keep="last"))

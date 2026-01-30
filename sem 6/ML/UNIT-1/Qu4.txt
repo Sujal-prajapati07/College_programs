@@ -1,0 +1,15 @@
+import pandas as pd
+
+data = { 'Name': ['John', 'Anna', 'Peter', 'Linda'], 
+		 'Age': [24, 13, 53, 33], 
+		 'Salary': [50000, 2000, 100000, 30000] 
+	   }
+
+df=pd.DataFrame(data)
+
+print(df)
+
+//Key name should be same as dictionary
+new_data=df.query("Age>=25 and Age<=60 and Salary>10000")
+
+print(new_data)

@@ -1,0 +1,21 @@
+import pandas as pd
+
+from sklearn.preprocessing import LabelEncoder
+
+data = {'Department': ['HR', 'Legal', 'Marketing', 'Management']}
+
+df=pd.DataFrame(data)
+
+print(df)
+
+//answer get true or false
+oneHot=pd.get_dummies(df, columns=['Department'])
+
+//answer get 0 or 1
+oneHot=pd.get_dummies(df, columns=['Department'],dtype=int)
+
+print(oneHot)
+
+le=LabelEncoder()
+df['dept'] = le.fit_transform(df['Department'])
+print(df)

@@ -1,0 +1,18 @@
+import pandas as pd
+
+data = { 'Name': ['John', 'Anna', 'Peter', None], 
+		 'Age': [24, 13, None, 33] 
+	   }
+
+df=pd.DataFrame(data)
+
+print(df)
+
+//drop missing value
+print(df.dropna())
+
+//fill missing value(mean)
+print(df["Age"].fillna(df["Age"].mean()))
+
+//fill missing values(constant name)
+print(df["Name"].fillna("Sujal"))
