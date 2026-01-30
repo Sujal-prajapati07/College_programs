@@ -9,12 +9,17 @@ df=pd.DataFrame(data)
 print(df)
 
 //answer get true or false
+//get_dummies() is a pandas function that converts categorical values into separate binary (0/1) 
+
 oneHot=pd.get_dummies(df, columns=['Department'])
 
 //answer get 0 or 1
 oneHot=pd.get_dummies(df, columns=['Department'],dtype=int)
 
 print(oneHot)
+
+//fit() → finds all unique categories
+//transform() → replaces them with numbers(0,1)
 
 le=LabelEncoder()
 df['dept'] = le.fit_transform(df['Department'])
