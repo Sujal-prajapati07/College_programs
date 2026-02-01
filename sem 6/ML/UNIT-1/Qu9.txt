@@ -1,0 +1,26 @@
+import nltk                          
+
+from nltk.tokenize import word_tokenize 
+
+from nltk.stem import PorterStemmer, WordNetLemmatizer  
+
+text = "The striped bats are hanging on their feet for best."
+
+//split the sentence into individual words
+tok = word_tokenize(text)                       
+
+//create stemmer object
+ps = PorterStemmer()                            
+
+//convert each word to its root form
+stem=[ps.stem(w) for w in tok]                
+
+//Create lemmatizer object
+lem = WordNetLemmatizer()
+
+#convert each word to its correct dictionary form
+lemma = [lem.lemmatize(w) for w in tok]         
+
+print("Tokens:", tok)                          
+print("Stemming:", stem)                       
+print("Lemmatization:", lemma)                 

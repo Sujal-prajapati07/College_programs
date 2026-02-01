@@ -1,0 +1,14 @@
+import pandas as pd
+
+df = pd.read_csv("Qu11_1.csv")
+
+print(df)
+
+//maximum rows displays
+print(pd.get_option("display.max_rows"))
+
+//display first 5 rows
+print(df.head())
+
+//display last 5 rows
+print(df.tail())

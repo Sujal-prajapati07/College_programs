@@ -1,0 +1,25 @@
+import pandas as pd
+
+from sklearn.preprocessing import MinMaxScaler
+
+data = {
+    'Income': [15000, 1800, 120000, 10000],
+    'Age': [25, 18, 42, 51]
+}
+
+df=pd.DataFrame(data)
+
+print(df)
+
+//create MinMaxScaler object
+s1=MinMaxScaler()
+
+//scale the data between 0 and 1
+s2=s1.fit_transform(df)
+
+//Convert scaled array back into DataFrame with column names
+//Formula:-Scaled value = (value-min) / (max-min)
+
+final_scaled=pd.DataFrame(s2,columns=df.columns)
+
+print(final_scaled)

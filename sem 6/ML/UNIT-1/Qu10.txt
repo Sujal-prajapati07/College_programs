@@ -1,0 +1,20 @@
+import pandas as pd
+
+data = {
+        'Name': ['John', 'Anna', 'Peter', 'Linda'],
+        'Location': ['New York', 'Paris', 'Berlin', 'London'],
+        'Age': [24, 13, 53, 33]
+       }
+
+df = pd.DataFrame(data)
+
+print(df)
+
+//display all rows where the age is greater than 30
+print(df[df['Age'] > 30])
+
+//display first person details
+print(df.iloc[0])
+
+//display the details of the first two people
+print(df.iloc[0:2])

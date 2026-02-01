@@ -1,0 +1,65 @@
+import pandas as pd
+
+df1 = pd.DataFrame({'Name': ['Alex', 'Bob', 'Clarke'],'Age': [10, 12, 13]})
+
+print(df1)
+
+//Read CSV file
+df = pd.read_csv("Qu14_employee_info.csv")
+print(df)
+
+//General information
+print(df.info())
+
+//Access 'name' and 'gender' columns
+print(df[['name', 'gender']])
+
+//First row using loc
+print(df.loc[0])
+
+//Rows 0 to 5, only name and job title
+print(df.loc[0:5, ['name', 'job title']])
+
+//Filter department = Accounting
+print(df[df['department'] == "Accounting"][['name', 'job title', 'department']])
+
+//Delete 'time zone' column
+df = df.drop(columns=['time zone'])
+print(df)
+
+//Drop duplicate rows
+print(df.drop_duplicates())
+
+//Drop duplicates based on residence
+print(df.drop_duplicates(subset=['residence']))
+
+//Drop rows with missing values
+print(df.dropna())
+
+//Drop columns with missing values
+print(df.dropna(axis=1))
+
+//Keep rows with at least 2 non-NaN values
+print(df.dropna(thresh=2))
+
+//Count missing values
+print(df.isna().sum())
+
+//Percentage of missing values
+print((df.isna().mean()) * 100)
+
+//Fill missing values with "Unknown"
+print(df.fillna("Unknown"))
+
+//Standardize name column
+print(df['name'].str.title())
+print("\nName in lowercase:")
+print(df['name'].str.lower())
+
+//Replace gender values
+df['gender'] = df['gender'].replace({'M': 'Male', 'F': 'Female'})
+print(df['gender'])
+
+//Remove hyphens from phone column
+df['phone'] = df['phone'].str.replace('-', '', regex=True)
+print(df['phone'])

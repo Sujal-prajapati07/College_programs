@@ -1,0 +1,19 @@
+import pandas as pd
+
+from sklearn.preprocessing import MinMaxScaler
+
+data = {
+        'Income': [15000, 1800, 120000, 10000],
+        'Age': [25, 18, 42, 51],
+        'Department': ['HR', 'Legal', 'Marketing', 'Management']
+       }
+
+df = pd.DataFrame(data)
+print(df)
+
+//scale income and age columns
+scale = MinMaxScaler()
+df[['Income', 'Age']] = scale.fit_transform(df[['Income', 'Age']])
+
+//scaled dataframe
+print(df)

@@ -1,0 +1,11 @@
+name,gender,job title,department,time zone,residence,phone
+Sujal,M,Accountant,Accounting,EST,Ahmedabad,123-456-7890
+Kirtan,M,Manager,Sales,PST,Surat,234-567-8901
+Purav,M,Clerk,Accounting,CST,Vadodara,345-678-9012
+Nihir,M,Analyst,Finance,EST,Rajkot,456-789-0123
+Manan,M,HR Executive,HR,PST,Gandhinagar,567-890-1234
+Umesh,M,Accountant,Accounting,CST,Mehsana,678-901-2345
+Prince,M,Manager,Sales,,Bhavnagar,789-012-3456
+Ansh,M,Clerk,Accounting,EST,,890-123-4567
+Rohan,M,Analyst,Finance,PST,Surat,
+Jainam,M,Accountant,Accounting,EST,Ahmedabad,123-456-7890

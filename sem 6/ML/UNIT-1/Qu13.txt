@@ -1,0 +1,22 @@
+import pandas as pd
+
+from sklearn.preprocessing import OneHotEncoder
+
+data = {
+        'Income': [15000, 1800, 120000, 10000],
+        'Age': [25, 18, 42, 51],
+        'Department': ['HR', 'Legal', 'Marketing', 'Management']
+       }
+
+df = pd.DataFrame(data)
+
+//One-Hot Encoding
+//sparse_output=False makes OneHotEncoder return a readable array instead of a sparse matrix
+enc = OneHotEncoder(sparse_output=False)
+enc_data = enc.fit_transform(df[['Department']])
+
+//get_feature_names_out=>create a DataFrame from the encoded values and give it meaningful column names
+res = pd.DataFrame(enc_data, columns=enc.get_feature_names_out(['Department']))
+
+print("Encoded Department:")
+print(res)
