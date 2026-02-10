@@ -1,0 +1,48 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = {
+    'Emp_ID': [1, 2, 3, 4, 5, 6, 3, 8],
+    'Age': [25, 30, np.nan, 28, 35, 30, np.nan, 40],
+    'Department': ['HR', 'IT', 'IT', 'Finance', 'HR', 'IT', 'IT', 'Finance'],
+    'Experience': [2, 5, 4, np.nan, 10, 5, 4, 15],
+    'Salary': [30000, 50000, 45000, 40000, 70000, 50000, 45000, 90000]
+}
+
+df = pd.DataFrame(data)
+print("Full Dataset:")
+print(df)
+
+print("\nFirst 3:")
+print(df.head(3))
+
+print("\nLast 3:")
+print(df.tail(3))
+
+df = df.drop_duplicates()
+print("\nAfter Removing Duplicates:")
+print(df)
+
+print("\nmissing values")
+print(df.isna().sum())
+
+df['Age'] = df['Age'].fillna(df['Age'].mean())
+df['Experience'] = df['Experience'].fillna(df['Experience'].mean())
+
+print("\nAfter filling missing values:")
+print(df)
+
+plt.figure()
+plt.hist(df['Salary'], bins=5)
+plt.title("Salary Distribution")
+plt.xlabel("Salary")
+plt.ylabel("Frequency")
+plt.show()
+
+plt.figure()
+plt.scatter(df['Experience'], df['Salary'])
+plt.title("Experience vs Salary")
+plt.xlabel("Experience")
+plt.ylabel("Salary")
+plt.show()
