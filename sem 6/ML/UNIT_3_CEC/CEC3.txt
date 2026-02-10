@@ -1,0 +1,43 @@
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+#data={'Years_at_Company':[2,4,3,8,1,5,6,7,10,2,2],
+#	  'Job_Satisfaction':[65,85,72,90,50,80,None,92,95,60,65],
+#	  'Left_of_company':[1,0,1,0,1,0,0,1,0,1,1]
+#	  }
+
+df1=pd.read_csv("csv3.csv")
+df=pd.DataFrame(df1)
+
+display(df)
+
+df=df.drop_duplicates(subset='Years_at_Company')
+
+display(df.head(5))
+
+df['Job_Satisfaction'].fillna(df['Job_Satisfaction'].mean())
+
+sc=MinMaxScaler()
+
+df[['Years_at_Company','Job_Satisfaction']]=sc.fit_transform(df[['Years_at_Company','Job_Satisfaction']])
+
+display(df)
+
+a=df[['Years_at_Company','Job_Satisfaction']]
+b=df['Left_of_company']
+
+a_test,a_train,b_test,b_train=train_test_split(a,b,test_size=0.3)
+
+dtc=DecisionTreeClassifier()
+dtc.fit(a_train,b_train)
+
+predict=dtc.predict(a_test)
+accu_data=accuracy_score(b_test,predict)
+print(accu_data)
+
+display(df)
+
