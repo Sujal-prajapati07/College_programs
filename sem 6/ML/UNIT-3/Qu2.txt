@@ -1,0 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+data = {
+    'Age':[22,35,50,28,45,32],
+    'BloodSugar':[85,140,160,95,155,100],
+    'BMI':[21,26,30,23,29,24],
+    'Diabetes':['No','Yes','Yes','No','Yes','No']
+}
+df = pd.DataFrame(data)
+
+df['Diabetes'] = df['Diabetes'].map({'Yes':1,'No':0})
+
+X = df[['Age','BloodSugar','BMI']]
+y = df['Diabetes']
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=42)
+
+model = DecisionTreeClassifier(random_state=42)
+model.fit(X_train,y_train)
+
+y_pred = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,y_pred))

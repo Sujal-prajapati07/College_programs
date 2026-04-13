@@ -1,0 +1,27 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+
+data = {
+    'Age': [25,30,45,35,50,28],
+    'Income': [3,5,8,4,10,3],
+    'CreditScore': [650,700,720,680,750,640],
+    'LoanApproved': ['No','Yes','Yes','No','Yes','No']
+}
+df = pd.DataFrame(data)
+
+df['LoanApproved'] = df['LoanApproved'].map({'Yes':1,'No':0})
+
+X = df[['Age','Income','CreditScore']]
+y = df['LoanApproved']
+
+model = DecisionTreeClassifier(random_state=42)
+model.fit(X,y)
+
+test = [[30,8,700]]
+prediction = model.predict(test)
+print("Loan Approved?" , "Yes" if prediction[0]==1 else "No")
+
+plt.figure(figsize=(8,6))
+plot_tree(model, feature_names=['Age','Income','CreditScore'], class_names=['No','Yes'], filled=True)
+plt.show()
