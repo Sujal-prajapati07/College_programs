@@ -1,0 +1,29 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+data = {
+    'CustomerID': [1,2,3,4,5,6,7,8,9,10],
+    'Annual Income (k$)': [15,16,17,18,19,10,14,12,13,11],
+    'Spending Score (1-100)': [39,81,6,77,40,3,48,49,47,42]
+}
+df = pd.DataFrame(data)
+
+X = df[['Annual Income (k$)', 'Spending Score (1-100)']].values
+
+#K-means with 3 clusters
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+kmeans.fit(X)
+
+labels = kmeans.labels_
+centroids = kmeans.cluster_centers_
+
+#Plot clusters
+plt.scatter(X[:,0], X[:,1], c=labels, cmap='viridis')
+plt.scatter(centroids[:,0], centroids[:,1], c='red', marker='X', s=200, label="Centroids")
+
+plt.xlabel("Annual Income (k$)")
+plt.ylabel("Spending Score (1-100)")
+plt.title("Customer Segmentation")
+plt.legend()
+plt.show()

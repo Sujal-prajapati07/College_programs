@@ -1,0 +1,35 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+data = {
+    'City': ['New York','Los Angeles','Chicago','Houston','Phoenix','Philadelphia',
+             'San Antonio','San Diego','Dallas','San Jose'],
+    'Latitude': [40.7128,34.0522,41.8781,29.7604,33.4484,39.9526,29.4241,32.7157,32.7767,37.3382],
+    'Longitude': [-74.0060,-118.2437,-87.6298,-95.3698,-112.0740,-75.1652,-98.4936,-117.1611,-96.7970,-121.8863]
+}
+
+df = pd.DataFrame(data)
+
+X = df[['Latitude','Longitude']].values
+
+#Apply K-means clustering
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+kmeans.fit(X)
+
+labels = kmeans.labels_
+centroids = kmeans.cluster_centers_
+
+#Plot cities with clusters
+plt.scatter(X[:,0], X[:,1], c=labels, cmap='rainbow')
+plt.scatter(centroids[:,0], centroids[:,1], c='black', marker='X', s=200, label="Centroids")
+
+#Annotate city names
+for i, city in enumerate(df['City']):
+    plt.text(X[i,0]+0.1, X[i,1]+0.1, city, fontsize=8)
+
+plt.xlabel("Latitude")
+plt.ylabel("Longitude")
+plt.title("City Clustering by Location")
+plt.legend()
+plt.show()

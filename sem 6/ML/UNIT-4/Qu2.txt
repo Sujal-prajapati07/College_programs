@@ -1,0 +1,23 @@
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+from sklearn.cluster import KMeans
+
+iris = load_iris()
+X = iris.data[:, :2]
+
+#Apply K-means with 3 clusters
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+kmeans.fit(X)
+
+labels = kmeans.labels_
+centroids = kmeans.cluster_centers_
+
+#Plot clusters
+plt.scatter(X[:,0], X[:,1], c=labels, cmap='rainbow')
+plt.scatter(centroids[:,0], centroids[:,1], c='black', marker='X', s=200, label="Centroids")
+
+plt.xlabel("Sepal Length")
+plt.ylabel("Sepal Width")
+plt.title("K-means on Iris dataset")
+plt.legend()
+plt.show()
