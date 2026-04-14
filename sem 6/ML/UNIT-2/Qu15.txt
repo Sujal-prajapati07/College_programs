@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+
+#<--------------------- Case-1--------------------->
+house_size = [1000, 1500, 2000, 2500, 3000]
+house_price = [200000, 250000, 300000, 350000, 400000]
+
+plt.scatter(house_size, house_price)
+plt.xlabel("House Size")
+plt.ylabel("Price")
+plt.title("House Size vs Price")
+plt.show()
+
+
+#<--------------------- Case-2--------------------->
+actual = [200000, 250000, 300000, 350000, 400000]
+predicted = [210000, 245000, 290000, 360000, 390000]
+
+plt.scatter(actual, predicted)
+plt.xlabel("Actual Price")
+plt.ylabel("Predicted Price")
+plt.title("Actual vs Predicted")
+plt.show()

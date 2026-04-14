@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+
+from collections import Counter
+
+data = ['A', 'B', 'A', 'C', 'B', 'C', 'A']
+
+count = Counter(data)
+
+letters = list(count.keys())
+values = list(count.values())
+
+plt.bar(letters, values, color='blue')
+
+plt.title("Letter Frequency")
+plt.xlabel("Letters")
+plt.ylabel("Count")
+
+plt.show()

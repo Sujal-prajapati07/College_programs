@@ -1,0 +1,14 @@
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#dataset with 50 samples and 4 features
+data = np.random.rand(50,4)
+df = pd.DataFrame(data, columns=['F1','F2','F3','F4'])
+
+#annot=True => numbers inside each box
+#cmap='viridis' => set gradient color theme
+sns.heatmap(df.corr(), annot=True, cmap='viridis')
+
+plt.show()

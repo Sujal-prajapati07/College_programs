@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt
+
+models = ['Logistic Regression', 'SVM', 'Random Forest']
+training_times = [2.1, 12.5, 8.4]
+
+# Horizontal bar => barh
+plt.barh(models, training_times, color='green')
+
+plt.xlabel("Training Time")
+plt.ylabel("Models")
+plt.title("Model Training Time")
+
+plt.show()

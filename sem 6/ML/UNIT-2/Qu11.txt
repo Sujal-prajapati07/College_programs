@@ -1,0 +1,12 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.random.randint(100000, 500000, 100)
+
+plt.hist(data, bins=10, color='pink', edgecolor='gray')
+
+plt.title("Price Distribution")
+plt.xlabel("Price")
+plt.ylabel("Frequency")
+
+plt.show()

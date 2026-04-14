@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+Shape = ['Square1', 'Rect', 'Square2']
+Length = [10, 15, 20]
+Height = [12, 18, 25]
+
+x = np.arange(len(Shape))
+width = 0.35
+
+plt.bar(x - width/2, Length, width, label='Length')
+plt.bar(x + width/2, Height, width, label='Height')
+
+plt.xticks(x, Shape)
+plt.legend()
+plt.title("Grouped Bar Chart")
+plt.show()
+
+plt.bar(Shape, Length, label='Length')
+plt.bar(Shape, Height, bottom=Length, label='Height')
+
+plt.legend()
+plt.title("Stacked Bar Chart")
+plt.show()

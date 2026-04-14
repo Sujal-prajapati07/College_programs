@@ -1,0 +1,14 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {'Age': [22, 25, 30, 35, 40, 28, 32, 45, 50, 29]}
+
+df = pd.DataFrame(data)
+
+plt.hist(df['Age'], bins=5, color='blue', edgecolor='black')
+
+plt.title("Age Distribution")
+plt.xlabel("Age")
+plt.ylabel("Frequency")
+
+plt.show()

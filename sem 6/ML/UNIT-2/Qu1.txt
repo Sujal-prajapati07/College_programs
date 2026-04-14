@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+
+data=[10, 20, 20, 25, 30, 35, 40, 50]
+
+plt.hist(data,bins=5,edgecolor="Black")
+
+plt.title("Histogram")
+plt.xlabel("Values")
+plt.ylabel("Frequency")
+plt.show()

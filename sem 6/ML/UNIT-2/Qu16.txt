@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+
+data1 = [10, 15, 20, 25, 30, 35, 1000, 2000]
+
+plt.boxplot(data1)
+plt.title("Transaction Amounts")
+plt.show()
+
+model1 = [0.82, 0.84, 0.83, 0.81, 0.95]
+model2 = [0.88, 0.87, 0.89, 0.86, 0.88]
+
+plt.boxplot([model1, model2], labels=['Model1', 'Model2'])
+plt.title("Model Comparison")
+plt.show()
+
+returns = [0.01, 0.02, 0.015, -0.03, 0.02, -0.1, 0.03, 0.08]
+
+plt.boxplot(returns)
+plt.title("Daily Returns")
+plt.show()

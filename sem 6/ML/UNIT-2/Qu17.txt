@@ -1,0 +1,21 @@
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+data = {
+ 'Feature1': np.random.rand(100),
+ 'Feature2': np.random.rand(100) * 2,
+ 'Feature3': np.random.rand(100) * 3,
+ 'Target': np.random.rand(100) * 4
+}
+
+df = pd.DataFrame(data)
+
+corr = df.corr()
+
+sns.heatmap(corr, annot=True, cmap='coolwarm')
+
+plt.title("Advanced Heatmap")
+
+plt.show()

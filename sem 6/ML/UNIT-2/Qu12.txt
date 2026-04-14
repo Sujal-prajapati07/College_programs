@@ -1,0 +1,13 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {'Age':[25,30,35,None,28,32,45,None,30,28]}
+df = pd.DataFrame(data)
+
+df = df.dropna()
+
+plt.hist(df['Age'], bins=5, color='skyblue', edgecolor='black')
+plt.title("Age Histogram Cleaned")
+plt.xlabel("Age")
+plt.ylabel("Frequency")
+plt.show()

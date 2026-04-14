@@ -1,0 +1,8 @@
+import matplotlib.pyplot as plt
+
+categories=['Dog', 'Cat', 'Bird']
+count=[3,5,2]
+
+plt.bar(categories,count,color="Green")
+
+plt.show()

@@ -1,0 +1,19 @@
+import pandas as pd
+import seaborn as sns #advance version of matplot lib
+import matplotlib.pyplot as plt
+
+data = {
+    'Feature_1':[10,20,30,40,50],
+    'Feature_2':[15,25,35,45,55],
+    'Feature_3':[5,10,15,20,25]
+}
+df = pd.DataFrame(data)
+
+corr = df.corr()
+
+#heatmap() → create heatmap
+#annot=True → show numbers on graph
+#cmap='coolwarm' → color style
+sns.heatmap(corr, annot=True, cmap='coolwarm')
+
+plt.show()
