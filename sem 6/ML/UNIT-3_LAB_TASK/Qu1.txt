@@ -1,0 +1,38 @@
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import tree
+import matplotlib.pyplot as plt
+
+data = {
+    'Age': [25, 30, 45, 35, 50, 28],
+    'Income': [3, 5, 8, 4, 10, 3],
+    'CreditScore': [650, 700, 720, 680, 750, 640],
+    'LoanApproved': ['No', 'Yes', 'Yes', 'No', 'Yes', 'No']
+}
+
+df = pd.DataFrame(data)
+
+df['LoanApproved'] = df['LoanApproved'].map({'No': 0, 'Yes': 1})
+
+X = df[['Age', 'Income', 'CreditScore']]  
+y = df['LoanApproved']                     
+
+model = DecisionTreeClassifier()
+
+model.fit(X, y)
+
+test_data = [[30, 8, 700]]
+
+prediction = model.predict(test_data)
+
+print("Prediction (1=Yes, 0=No):", prediction)
+
+plt.figure(figsize=(10,6))
+
+tree.plot_tree(model,
+               feature_names=['Age','Income','CreditScore'],
+               class_names=['No','Yes'],
+               filled=True)
+
+plt.title("Decision Tree - Loan Approval")
+plt.show()

@@ -1,0 +1,41 @@
+import pandas as pd
+from sklearn import tree
+from sklearn.preprocessing import LabelEncoder
+from sklearn.tree import DecisionTreeClassifier
+import matplotlib.pyplot as plt
+
+data = {
+    'Temperature': ['Hot', 'Hot', 'Mild', 'Cool', 'Mild', 'Cool'],
+    'Humidity': ['High', 'High', 'Normal', 'Normal', 'High', 'High'],
+    'Wind': ['Weak', 'Strong', 'Weak', 'Strong', 'Weak', 'Strong'],
+    'Activity': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No']
+}
+
+df=pd.DataFrame(data)
+print(df)
+
+le=LabelEncoder()
+
+df['Temperature']=le.fit_transform(df['Temperature'])
+df['Humidity']=le.fit_transform(df['Humidity'])
+df['Wind']=le.fit_transform(df['Wind'])
+df['Activity']=le.fit_transform(df['Activity'])
+
+X=df[['Temperature','Humidity','Wind']]
+y=df['Activity']
+
+model=DecisionTreeClassifier()
+
+model.fit(X,y)
+
+test_data=[[1,1,1]]
+
+prediction=model.predict(test_data)
+
+print("Prediction : ",prediction)
+
+plt.figure(figsize=(10,6))
+
+tree.plot_tree(model,feature_names=['Temperature','Humidity','Wind'],class_names=['No','Yes'],filled=True)
+
+plt.show()
